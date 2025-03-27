@@ -1,0 +1,230 @@
+```mdx
+---
+title: Running a Minecraft Server
+description: A comprehensive guide to setting up, configuring, and maintaining a Minecraft server.
+---
+
+import InfoBox from '@theme/InfoBox';
+import CodeBlock from '@theme/CodeBlock';
+import Steps from '@theme/Steps';
+
+# Running a Minecraft Server
+
+This guide provides a comprehensive overview of setting up, configuring, and maintaining a Minecraft server.  Whether you're hosting for a small group of friends or a large public community, this documentation will help you navigate the process.
+
+## Table of Contents
+
+1.  [Introduction](#introduction)
+2.  [Types of Minecraft Servers](#types-of-minecraft-servers)
+    *   [Vanilla Servers](#vanilla-servers)
+    *   [Bukkit/Spigot/Paper Servers](#bukkitspigotpaper-servers)
+    *   [Forge/Fabric Modded Servers](#forgefabric-modded-servers)
+    *   [Hybrid Servers](#hybrid-servers)
+    *   [Minecraft Bedrock Servers](#minecraft-bedrock-servers)
+3.  [Setting Up a Minecraft Server](#setting-up-a-minecraft-server)
+    *   [Hardware Requirements](#hardware-requirements)
+    *   [Software Requirements](#software-requirements)
+    *   [Installation Steps](#installation-steps)
+4.  [Server Configuration](#server-configuration)
+    *   [Server Properties](#server-properties)
+    *   [OPs and Permissions](#ops-and-permissions)
+    *   [Whitelisting and Bans](#whitelisting-and-bans)
+5.  [Server Hosting Options](#server-hosting-options)
+    *   [Self-Hosting](#self-hosting)
+    *   [Third-Party Hosting](#third-party-hosting)
+    *   [Cloud Hosting](#cloud-hosting)
+6.  [Plugins and Mods](#plugins-and-mods)
+    *   [Installing Plugins](#installing-plugins)
+    *   [Popular Plugins](#popular-plugins)
+    *   [Modding a Server](#modding-a-server)
+7.  [Server Maintenance](#server-maintenance)
+    *   [Backups](#backups)
+    *   [Updates](#updates)
+    *   [Performance Optimization](#performance-optimization)
+8.  [Security and Administration](#security-and-administration)
+    *   [Preventing Griefing](#preventing-griefing)
+    *   [DDoS Protection](#ddos-protection)
+    *   [Managing Staff](#managing-staff)
+9.  [Troubleshooting Common Issues](#troubleshooting-common-issues)
+10. [Conclusion](#conclusion)
+
+
+## Introduction
+
+Minecraft servers enable players to connect and play together in a shared world.  This guide covers the essential aspects of running a server, from choosing the right type to ensuring its security and performance.
+
+## Types of Minecraft Servers
+
+### Vanilla Servers
+
+<InfoBox type="info">Official server software from Mojang.  Ideal for small, private groups seeking a pure Minecraft experience.</InfoBox>
+
+*   No plugins or mods.
+*   Offers basic multiplayer functionality.
+
+### Bukkit/Spigot/Paper Servers
+
+<InfoBox type="tip">Extend server functionality with plugins. Spigot and Paper offer performance enhancements over Bukkit.</InfoBox>
+
+*   **Bukkit:**  Foundation for plugin development.
+*   **Spigot:** Optimized version of Bukkit.
+*   **Paper:** Further optimized for performance.
+
+### Forge/Fabric Modded Servers
+
+<InfoBox type="tip">Enable extensive modifications to the game. Requires clients to have the same mods installed.</InfoBox>
+
+*   **Forge:**  Popular for large modpacks.
+*   **Fabric:** Lightweight alternative with modern mods.
+
+
+### Hybrid Servers
+
+<InfoBox type="warning">Combine mods and plugins. More complex to set up but offers greater flexibility.</InfoBox>
+
+*   Examples: Magma, Mohist.
+
+### Minecraft Bedrock Servers
+
+<InfoBox type="info">For players on mobile, console, and Windows 10. Uses different server software.</InfoBox>
+
+*   Example: Bedrock Dedicated Server.
+
+
+## Setting Up a Minecraft Server
+
+### Hardware Requirements
+
+*   **CPU:** At least 2 GHz (4+ cores recommended).
+*   **RAM:** 2GB for small servers, 8GB+ for large modded servers.
+*   **Storage:** SSD recommended.
+
+### Software Requirements
+
+*   **Java:** Required for Java Edition servers.
+
+### Installation Steps
+
+<Steps>
+  <Steps.Item title="Download">Download the server .jar file from Minecraft.net.</Steps.Item>
+  <Steps.Item title="Run">
+    <CodeBlock language="bash">
+      {`java -Xmx2G -Xms2G -jar server.jar nogui`}
+    </CodeBlock>
+  </Steps.Item>
+  <Steps.Item title="EULA">Accept the EULA by editing `eula.txt`.</Steps.Item>
+  <Steps.Item title="Configure">Configure `server.properties`.</Steps.Item>
+</Steps>
+
+
+## Server Configuration
+
+### Server Properties
+
+Key settings in `server.properties`:
+
+```properties
+max-players=20
+gamemode=survival
+difficulty=normal
+enable-command-block=false
+```
+
+### OPs and Permissions
+
+*   Grant admin rights: `/op <player>`
+*   Plugins like LuckPerms offer granular permission management.
+
+### Whitelisting and Bans
+
+*   Enable whitelist: `whitelist=true` in `server.properties`
+*   Ban players: `/ban <player>`
+
+
+## Server Hosting Options
+
+### Self-Hosting
+
+*   **Pros:** Full control, no monthly fees.
+*   **Cons:** Requires good hardware and networking knowledge.
+
+### Third-Party Hosting
+
+*   Providers: Apex Hosting, Shockbyte, BisectHosting.
+*   **Pros:** Easy setup, support.
+*   **Cons:** Monthly cost.
+
+### Cloud Hosting
+
+*   Providers: AWS, Google Cloud, Oracle Cloud.
+*   **Pros:** Scalable.
+*   **Cons:** Requires technical knowledge.
+
+
+## Plugins and Mods
+
+### Installing Plugins
+
+1.  Download .jar files from SpigotMC or Bukkit.
+2.  Place them in the `plugins` folder.
+3.  Restart the server.
+
+### Popular Plugins
+
+*   EssentialsX: Basic commands and utilities.
+*   WorldGuard: Region protection.
+*   LuckPerms: Advanced permissions management.
+
+### Modding a Server
+
+1.  Install Forge or Fabric.
+2.  Add mods to the `mods` folder.
+3.  Ensure clients have the same mods installed.
+
+
+## Server Maintenance
+
+### Backups
+
+Use automated tools like `rsync` or plugins like CoreProtect.
+
+### Updates
+
+*   Always back up before updating.
+*   Check plugin/mod compatibility.
+
+### Performance Optimization
+
+*   Use Paper for better performance.
+*   Limit entities with `spawn-limits` in `bukkit.yml`.
+
+
+## Security and Administration
+
+### Preventing Griefing
+
+*   Use WorldGuard and CoreProtect.
+*   Enable `spawn-protection` in `server.properties`.
+
+### DDoS Protection
+
+*   Use a hosting provider with DDoS mitigation.
+*   Configure firewalls.
+
+### Managing Staff
+
+*   Assign roles with permissions plugins.
+*   Audit logs with CoreProtect.
+
+
+## Troubleshooting Common Issues
+
+*   **Server Not Starting:** Check Java version and server logs.
+*   **Lag:** Optimize settings, pre-generate chunks.
+*   **Connection Issues:** Check firewall and port forwarding.
+
+
+## Conclusion
+
+Running a successful Minecraft server involves careful planning, setup, and ongoing maintenance. This guide provides a solid foundation for understanding the key aspects of server management.  For further information, consult the Minecraft Wiki and SpigotMC.
+```
