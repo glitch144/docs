@@ -1,6 +1,6 @@
 ---
 title: XGamingServer Pterodactyl Panel Guide
-description: Complete interactive guide to managing game servers through the Pterodactyl Panel
+description: Comprehensive guide to all Pterodactyl Panel features and functions
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,59 +8,177 @@ import TabItem from '@theme/TabItem';
 import Collapse from '@theme/Collapse';
 import Feedback from '@components/Feedback';
 
-# Pterodactyl Panel Master Guide
+# XGamingServer Pterodactyl Panel Documentation
 
 <Feedback position="top" />
 
+## Core Panel Tabs
+
 <Tabs>
-<TabItem value="core-tabs" label="Main Tabs" default>
+<TabItem value="console" label="Console" default>
 
-## Panel Navigation Overview
+### Purpose
+Real-time server monitoring and interaction
 
-<Collapse title="1. Console - Real-Time Monitoring">
-**Purpose:** Direct server interaction and monitoring
+<Collapse title="Key Features">
+- **Live Logs**  
+  ```log
+  [15:32] User 'Player123' joined the game
+  [15:33] WARN: Low memory warning
+  ```
+- **Command Execution**  
+  ```bash
+  # Minecraft example
+  give Player123 minecraft:diamond 64
+  ```
+- **Emergency Controls**  
+  <div className="button-group">
+    <button onClick={() => console.log('Restarting...')}>🔄 Soft Restart</button>
+    <button onClick={() => console.log('Killing...')}>⛔ Force Stop</button>
+  </div>
+</Collapse>
 
-**Key Features:**
-- Live log streaming
-- Command execution interface
-- Log filtering tools
-- Emergency restart controls
+</TabItem>
 
+<TabItem value="files" label="Files">
+
+### Purpose
+File management and configuration
+
+<Collapse title="Key Features">
+```file-tree
+/server
+  ├── config/
+  │   └── server.properties
+  ├── mods/
+  │   └── BiomesOPlenty.jar
+  └── backups/
+```
+
+**File Actions**  
+```javascript
+// Example file permission
+chmod 755 /server/config/server.properties
+```
+
+<div className="grid">
+  <button onClick={() => console.log('Uploading...')}>📤 Upload Files</button>
+  <button onClick={() => console.log('Zipping...')}>🗜️ Compress Folder</button>
+</div>
+</Collapse>
+
+</TabItem>
+
+<TabItem value="databases" label="Databases">
+
+### Purpose
+Database management for game servers
+
+<Collapse title="Configuration Example">
+```sql
+CREATE DATABASE rustdb;
+GRANT ALL PRIVILEGES ON rustdb.* TO 'user_xgs'@'%';
+FLUSH PRIVILEGES;
+```
+
+**Security Settings**  
+<div className="checklist">
+- [x] IP Whitelisting
+- [ ] Public Access
+- [x] Daily Backups
+</div>
+</Collapse>
+
+</TabItem>
+
+<TabItem value="schedules" label="Schedules">
+
+### Purpose
+Task automation
+
+<Collapse title="Sample Schedule">
+```json
+{
+  "task": "backup",
+  "frequency": "0 3 * * *",
+  "conditions": {
+    "only_if_online": true,
+    "max_cpu_usage": 60
+  }
+}
+```
+
+<button onClick={() => console.log('Scheduling...')}>⏰ Create New Schedule</button>
+</Collapse>
+
+</TabItem>
+
+<TabItem value="users" label="Users">
+
+### Purpose
+Access management
+
+<Collapse title="Permission Matrix">
+| Permission       | Admin | Moderator | Guest |
+|------------------|-------|-----------|-------|
+| Start Server     | ✅    | ✅        | ❌    |
+| Edit Files       | ✅    | ❌        | ❌    |
+| View Logs        | ✅    | ✅        | ✅    |
+</Collapse>
+
+</TabItem>
+
+<TabItem value="network" label="Network">
+
+### Purpose
+Connection management
+
+<Collapse title="Port Configuration">
+```network
+# Example port forwarding
+25565/tcp -> 192.168.1.10:25565
+27015/udp -> 192.168.1.10:27015
+```
+
+<button onClick={() => console.log('Opening ports...')}>🔓 Enable Ports</button>
+</Collapse>
+
+</TabItem>
+
+</Tabs>
+
+## Advanced Configuration
+
+<Collapse title="Startup Parameters">
 ```bash
-# Example command to broadcast message
-say Server restarting in 5 minutes!
-<button onClick={() => console.log('Executing broadcast...')}>Send Command</button>
+# Java Server Example
+java -Xmx4G -Xms2G -jar server.jar nogui
+```
+
+**Environment Variables**  
+<div className="env-vars">
+  <span>WORLD_NAME=</span>
+  <input type="text" placeholder="Enter world name" />
+</div>
 </Collapse>
 
-<Collapse title="2. Files - Server Management"> **Purpose:** File system control and configuration
-Workflow:
+## Best Practices
 
-file-tree
-Copy
-/worlds
-  /nether
-  /the_end
-/plugins
-  CoreProtect.jar
-  WorldEdit.jar
-<div className="file-actions"> <button onClick={() => console.log('Uploading...')}>📤 Upload Config</button> <button onClick={() => console.log('Downloading...')}>📥 Download Backup</button> </div> </Collapse><Collapse title="3. Databases - Data Management"> **Connection Example:** ```sql mysql -h xgaming-db01 -u user_abc123 -p ```
-Security Tips:
-
-Always rotate credentials monthly
-
-Use IP whitelisting
-
-Enable automatic backups
-
-</Collapse>
-<!-- Continue similar Collapse components for remaining tabs --></TabItem><TabItem value="pro-tips" label="Expert Tips">
-Advanced Management Strategies
-<Collapse title="Automation Setup"> **Sample Schedule Configuration:** ```json { "backup_schedule": { "interval": "0 3 * * *", "retention": 7, "compression": "zip" } } ```
-<button onClick={() => console.log('Scheduling backups...')}>🔄 Create Daily Backup</button>
+<Collapse title="Security Checklist">
+<div className="checklist">
+- [ ] Enable 2FA for all users
+- [ ] Configure automated backups
+- [ ] Restrict database access
+- [ ] Regular permission audits
+</div>
 </Collapse>
 
-<Collapse title="Security Best Practices"> ```network-config # Example firewall rules iptables -A INPUT -p tcp --dport 25565 -j ALLOW iptables -A INPUT -s 192.168.1.0/24 -j ALLOW ```<div className="security-checklist"> <input type="checkbox" id="2fa" /> <label>Enable 2FA</label> <input type="checkbox" id="ipwhitelist" /> <label>IP Whitelisting</label> </div> </Collapse></TabItem> </Tabs>
-Quick Access Tools
-<div className="dashboard-grid"> <div className="tool-card" onClick={() => window.location = '#console'}> <h3>🖥️ Live Console</h3> <p>Jump to real-time monitoring</p> </div> <div className="tool-card" onClick={() => window.location = '#backups'}> <h3>💾 Backup Manager</h3> <p>Configure data protection</p> </div> </div>
-Support Resources
-<div className="button-group"> <a href="/emergency-support" className="button button--danger">🚨 Emergency Restart</a> <a href="/backup-guide" className="button button--success">📀 Backup Tutorial</a> <a href="/security-audit" className="button button--warning">🛡️ Security Check</a> </div><Feedback title="Help us improve this guide!" /> ```
+## Support Resources
+
+<div className="button-group">
+  <a href="/live-support" className="button button--primary">💬 Live Chat</a>
+  <a href="/video-guides" className="button button--secondary">🎥 Video Tutorials</a>
+  <a href="/emergency" className="button button--danger">🚨 Emergency Support</a>
+</div>
+
+<Feedback title="Was this documentation helpful?" />
