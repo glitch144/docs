@@ -10,24 +10,33 @@ featured: false
 ## Getting Started
 
 <Note>
-Always keep your API keys secure. Never commit them to public repositories.
+  Always keep your API keys secure. Never commit them to public repositories.
 </Note>
 
 ## Authentication Methods
 
 <Steps>
-1. Obtain your API key from the dashboard
-2. Include it in request headers
-3. Verify your domain
+  <Step title="Step 1">
+    Obtain your API key from the dashboard
+  </Step>
+  <Step title="Step 2">
+    Include it in request headers
+  </Step>
+  <Step title="Step 3">
+    Verify your domain
+  </Step>
 </Steps>
 
 ## Code Examples
 
 <CodeGroup>
-<Tab label="JavaScript">
+  <CodeBlock title="JavaScript">
 ```javascript
 const response = await fetch('https://api.example.com', {
   headers: {
     'Authorization': `Bearer ${API_KEY}`
   }
 });
+```
+  </CodeBlock>
+</CodeGroup>
