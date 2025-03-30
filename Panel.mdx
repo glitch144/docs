@@ -18,98 +18,61 @@ The **Pterodactyl Panel** is your central hub for managing game servers on XGami
 
 ## Core Features
 
-<Tabs>
-  <Tab title="Tab">
-    ### Server Controls
+### Console
 
-    Manage your game server's lifecycle and resources.
+The Console tab is your direct interface to interact with and monitor your game server in real-time.
 
-    #### Key Tabs:
+1. 
 
-    - **Console**: Execute commands and view live logs
-    - **Startup**: Configure JVM flags or launch parameters
-    - **Settings**: Allocate RAM/CPU or rename your server
+   <Card title="Server Controls (Top Right Section):" icon="sparkles">
+     Start/Restart/Stop buttons - Manage server state
+     - Command input field ("Type a command...") - Where you enter server commands
+     - Server status indicators (Offline/Online)
+     1. 
+   </Card>
+   Server Controls (Top Right Section):
 
-    ```bash
-    # Example: Restart server via CLI (for admins)  
-    pterodactyl server restart --id=abc123
-    ```
 
-    ![Server Settings Interface](/images/server-settings.png)
-  </Tab>
-  <Tab title="Tab">
-    
-  </Tab>
-</Tabs>
+1. Server Information Panel (Right Side):
 
----
+- Address: Shows server IP and port (Example: 178.156.160.221)
+- Uptime: Displays how long the server has been running 
+- Resource Usage:
+  - CPU Load (Currently Offline)
+  - Memory Usage (Currently Offline)
+  - Disk Space (7.96 GiB available)
+  - Network Activity (Inbound/Outbound - Currently Offline)
 
-## User & Permission System
+1. Statistics Graphs (Bottom):
 
-<Tabs>
-  <Tab title="Tab">
-    ### User Roles
+- CPU Load graph
+- Memory Usage graph
+- Network Activity graph
 
-    Invite team members with granular permissions:
+Key Functions:
 
-    | Role          | Permissions                  |
-    | ------------- | ---------------------------- |
-    | **Admin**     | Full server control          |
-    | **Moderator** | Restart server, kick players |
-    | **Guest**     | View logs, no edits          |
-  </Tab>
-  <Tab title="Tab">
-    ### Security Features
+- Real-time command execution (Minecraft/Rust/ARK commands etc.)
+- View live server logs and output
+- Monitor resource usage when server is online
+- Immediate server state control (start/stop/restart)
 
-    - **Two-Factor Authentication (2FA)**: Enable in Account Settings
-    - **API Access**: Generate tokens for automation
-    - **Audit Logs**: Track user actions in **Activity** tab
+Usage Notes:
 
-    > ⚠️ **Best Practice**: Restrict admin access to trusted users only.
-  </Tab>
-</Tabs>
+- When offline, only Start button is active
+- Command history available with up/down arrows
+- Right-click in console for copy/paste options
+- Graphs update every 10 seconds when server is running
 
----
+Troubleshooting Tips:
 
-## Advanced Tools
+- If console freezes, try refreshing page
+- "Offline" status may require manual start
+- Command not working? Check game-specific syntax
+- No response? Verify server is actually running
 
-### Network Configuration
+The console provides the most direct access to your server operations and is particularly useful for:
 
-- **Port Management**: Open/close ports for games or FTP
-- **Firewall Rules**: Restrict IP ranges in **Network** tab
-
-```json
-// Example: Open Minecraft port (25565)  
-{  
-  "action": "allow",  
-  "port": 25565,  
-  "protocol": "tcp"  
-}
-```
-
----
-
-## Troubleshooting
-
-| Issue              | Solution                            |
-| ------------------ | ----------------------------------- |
-| Server won't start | Check **Console** logs for errors   |
-| Permission denied  | Verify user roles in **Users** tab  |
-| High CPU usage     | Reduce player slots or upgrade plan |
-
----
-
-## Support Resources
-
-1. **Submit a Ticket**:
-   - Navigate to **Settings \> Help \> Create Ticket**
-2. **Discord Community**:
-   - Join [XGamingServer Discord](https://discord.xgamingserver.com)
-
----
-
-## Suggested Images
-
-1. **Dashboard Overview**: Show server list and resource graphs
-2. **File Manager**: Demonstrate editing `server.properties`
-3. **User Roles**: Permission matrix UI
+- Debugging issues
+- Administering players
+- Watching real-time server activity
+- Executing game commands without direct server access
