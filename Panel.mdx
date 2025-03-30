@@ -18,95 +18,21 @@ The **Pterodactyl Panel** is your central hub for managing game servers on XGami
 
 ## Core Features
 
-### 
+<CardGroup cols={2}>
+  <Card title="Console" icon="sparkles">
+    
+  </Card>
+  <Card title="New Card" icon="sparkles">
+    
+  </Card>
+</CardGroup>
 
 <Tabs>
   <Tab title="Console">
     
   </Tab>
-  <Tab title="files">
-    The Files tab is your server's file manager, allowing you to directly access, edit, and organize all server files via a web interface.
-
-    ---
-
-    ### **Main Components**
-
-    #### **1. Top Toolbar**
-
-    - **Search Files...**
-      - Quickly locate files by name (supports wildcards like `*.yml`).
-    - **Pull File**
-      - Download files from external URLs directly to your server.
-    - **Create Directory**
-      - Make new folders (e.g., `/plugins`, `/backups`).
-    - **Upload**
-      - Drag-and-drop or select files to upload (supports `.zip`, `.jar`, etc.).
-    - **New File**
-      - Create empty files (e.g., `config.yml`, `permissions.json`).
-
-    #### **2. File List**
-
-    - Displays all files in `/home/container/` (default root directory).
-    - **Clicking a file** opens it in:
-      - **Built-in editor** (for text files like `.yml`, `.txt`).
-      - **Download prompt** (for binaries like `.jar`, `.zip`).
-    - **Checkboxes** appear when hovering for bulk actions.
-
-    #### **3. Right-Click/Three-Dot Menu (Per File)**
-
-    - **Rename** → Change file/folder names.
-    - **Move** → Relocate to another directory.
-    - **Permissions** → Set `755`, `644`, etc. (Linux-style).
-    - **Archive** → Compress to `.zip`/`.tar.gz`.
-    - **Delete** → Permanently remove (no recycle bin\!).
-
-    #### **4. Bulk Actions (Bottom Bar)**
-
-    Appears when selecting files/folders:
-
-    - **Move** → Transfer multiple items at once.
-    - **Archive** → Bundle selected files into one archive.
-    - **Delete** → Mass removal (caution: irreversible).
-
-    ---
-
-    ### **Key Features**
-
-    - **Syntax Highlighting** → For code files (e.g., `.json`, `.properties`).
-    - **Drag-and-Drop** → Instantly upload files from your PC.
-    - **Path Navigation** → Click folder names to traverse directories.
-    - **Keyboard Shortcuts**:
-      - `Ctrl+F` → Search
-      - `Ctrl+Click` → Multi-select files
-
-    ---
-
-    ### **Common Use Cases**
-
-    1. **Installing Mods/Plugins**
-       - Upload `.jar` files to `/plugins/` (Bukkit) or `/mods/` (Forge).
-    2. **Editing Configs**
-       - Modify `server.properties`, `settings.ini`, etc., in real time.
-    3. **Cleaning Space**
-       - Delete old logs (`/logs/`) or unused worlds.
-
-    ---
-
-    ### **Troubleshooting**
-
-    | **Issue**           | **Solution**                                                        |
-    | :------------------ | :------------------------------------------------------------------ |
-    | "Permission Denied" | Use **Permissions** option to set `755` (folders) or `644` (files). |
-    | Upload fails        | Check disk space (`7.96 GiB` left in your case).                    |
-    | Broken archives     | Re-upload or use **Pull File** with direct download links.          |
-
-    ---
-
-    ### **Pro Tips**
-
-    - **Backup first** → Use the **Backups** tab before mass deletions.
-    - **Use Archives** → Compress old logs/worlds to save space.
-    - **Case-sensitive** → `Config.yml` ≠ `config.yml` on Linux servers.
+  <Tab title="Tab">
+    
   </Tab>
 </Tabs>
 
