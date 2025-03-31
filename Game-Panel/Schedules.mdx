@@ -1,0 +1,123 @@
+---
+title: "Schedules"
+---
+
+The **Schedules** tab automates server tasks (restarts, backups, commands) at set times. Below is a full breakdown of its features **and** how to set up schedules.
+
+---
+
+## **1. Schedule Tab Overview**
+
+### **What You Can Do**
+
+✅ **Automate repetitive tasks** (restarts, backups, announcements)\
+✅ **Run commands** on a schedule (e.g., `save-all` in Minecraft)\
+✅ **Control power states** (start/stop/restart server)\
+✅ **Get logs** of past runs (success/failure)
+
+### **Main Components**
+
+| **Section**          | **Description**                                             |
+| :------------------- | :---------------------------------------------------------- |
+| **Schedule List**    | Shows all active schedules (name, frequency, next run time) |
+| **Create Schedule**  | Button to set up new automated tasks                        |
+| **⋮ (Actions Menu)** | Edit, run now, or delete schedules                          |
+
+---
+
+## **2. How to Set Up a Schedule**
+
+### **Step 1: Create a New Schedule**
+
+1. Go to **Schedules** → Click **"Create Schedule"** (top-right).
+2. Fill in:
+   - **Name** (e.g., "Daily Backup")
+   - **Active** (Toggle ON to enable)
+
+### **Step 2: Set Frequency**
+
+Choose **when** it runs:
+
+- **Simple Timer** (Easy)
+  - Example: "Every 24 Hours" (for daily tasks)
+- **Custom CRON** (Advanced)
+  - Example: `0 3 * * *` (Runs at 3 AM daily)
+  - Use [crontab.guru](http://crontab.guru) for help.
+
+### **Step 3: Add Actions**
+
+Pick **what** the schedule does:
+
+- **Run Command** (e.g., `say "Restarting soon!"`)
+- **Power Action** (Restart/Stop/Start Server)
+- **Create Backup** (Auto-save with retention)
+
+### **Step 4: Save & Test**
+
+1. Click **"Create Schedule"** to save.
+2. **Test immediately** with **"Execute Now"** (⋮ menu).
+3. Check **Activity Logs** for errors.
+
+---
+
+## **3. Example Schedules**
+
+### **Example 1: Daily Restart (Minecraft)**
+
+| **Setting**   | **Value**                |
+| :------------ | :----------------------- |
+| **Name**      | `Daily 3 AM Restart`     |
+| **Frequency** | `0 3 * * *` (3 AM daily) |
+| **Actions**   |                          |
+
+1. `say Server restarting in 5m!`
+2. (5 min delay)
+3. `save-all`
+4. `Restart Server`
+
+### **Example 2: Auto-Backup (Rust/ARK)**
+
+| **Setting**   | **Value**                     |
+| :------------ | :---------------------------- |
+| **Name**      | `Backup Every 6 Hours`        |
+| **Frequency** | `0 */6 * * *` (Every 6 hours) |
+| **Actions**   |                               |
+
+1. `Create Backup`
+2. **Retention:** Keep last 3 backups
+
+---
+
+## **4. Troubleshooting & Tips**
+
+### **Common Issues**
+
+| **Problem**          | **Fix**                   |
+| :------------------- | :------------------------ |
+| Schedule not running | Check if **Active** is ON |
+| Command fails        | Test in **Console** first |
+| Backup fails         | Check **disk space**      |
+
+### **Best Practices**
+
+🔹 **Test schedules** with short intervals first (e.g., 5 min).\
+🔹 **Add warnings** before restarts (e.g., `say "Restarting soon!"`).\
+🔹 **Monitor logs** in **Activity → Schedules**.
+
+---
+
+## **5. Advanced: CRON Cheat Sheet**
+
+| **CRON**      | **Meaning**              |
+| :------------ | :----------------------- |
+| `0 * * * *`   | Every hour               |
+| `0 */6 * * *` | Every 6 hours            |
+| `0 3 * * *`   | Daily at 3 AM            |
+| `0 0 * * 0`   | Weekly (Sunday midnight) |
+
+---
+
+### **Need Help?**
+
+➡️ **Test commands first** in the **Console** tab.\
+➡️ **Join our Discord** for support: [XGamingServer Discord](https://discord.xgamingserver.com/).
