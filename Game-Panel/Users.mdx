@@ -1,0 +1,150 @@
+---
+title: "Users"
+---
+
+The **Users** tab lets you invite and manage subusers with **granular permissions** for your server.
+
+---
+
+## **1. How to Add a New User**
+
+1. Click **"Invite User"** → Enter their email.
+2. Set permissions (see below).
+3. Click **"Send Invite"**.
+
+➡️ _The user will get an email to accept access._
+
+---
+
+## **2. Permission Categories Explained**
+
+Each permission controls what a subuser can do.
+
+### **🔧 Control Permissions**
+
+| **Permission** | **What It Allows**           |
+| :------------- | :--------------------------- |
+| `console`      | Send commands via console    |
+| `start`        | Start the server             |
+| `stop`         | Stop the server              |
+| `restart`      | Restart (but not fully stop) |
+
+### **👥 User Management**
+
+| **Permission** | **What It Allows**       |
+| :------------- | :----------------------- |
+| `create`       | Add new subusers         |
+| `read`         | View existing subusers   |
+| `update`       | Edit subuser permissions |
+| `delete`       | Remove subusers          |
+
+### **📁 File Access**
+
+| **Permission** | **What It Allows**   |
+| :------------- | :------------------- |
+| `create`       | Upload/create files  |
+| `read`         | View folder contents |
+| `read-content` | View/download files  |
+| `update`       | Edit files           |
+| `delete`       | Delete files/folders |
+| `archive`      | Zip/unzip files      |
+| `sftp`         | Access via SFTP      |
+
+### **💾 Backup Management**
+
+| **Permission** | **What It Allows**                                |
+| :------------- | :------------------------------------------------ |
+| `create`       | Make new backups                                  |
+| `read`         | View backups                                      |
+| `delete`       | Remove backups                                    |
+| `download`     | Download backups _(Danger: Full file access\!)_   |
+| `restore`      | Restore backups _(Danger: Can overwrite files\!)_ |
+
+### **🌐 Network & Ports**
+
+| **Permission** | **What It Allows**  |
+| :------------- | :------------------ |
+| `read`         | View server ports   |
+| `create`       | Add new ports       |
+| `update`       | Change primary port |
+| `delete`       | Remove ports        |
+
+### **⚙️ Startup & Docker**
+
+| **Permission** | **What It Allows**     |
+| :------------- | :--------------------- |
+| `read`         | View startup settings  |
+| `update`       | Edit startup variables |
+| `docker-image` | Change Docker image    |
+
+### **🔗 Subdomains**
+
+| **Permission** | **What It Allows** |
+| :------------- | :----------------- |
+| `create`       | Add subdomains     |
+| `delete`       | Remove subdomains  |
+
+### **🗃️ Databases**
+
+| **Permission**  | **What It Allows**     |
+| :-------------- | :--------------------- |
+| `create`        | Create databases       |
+| `view_password` | See database passwords |
+| `delete`        | Remove databases       |
+
+### **⏰ Schedules**
+
+| **Permission** | **What It Allows** |
+| :------------- | :----------------- |
+| `create`       | Make new schedules |
+| `delete`       | Remove schedules   |
+
+### **🛠️ Server Settings**
+
+| **Permission** | **What It Allows** |
+| :------------- | :----------------- |
+| `rename`       | Change server name |
+| `reinstall`    | Reinstall server   |
+
+---
+
+## **3. Recommended Permission Sets**
+
+### **Moderator Role**
+
+- `console`, `restart`, `read` (files), `read` (backups)\
+  _Can restart and warn players, but can’t delete files._
+
+### **Backup Manager Role**
+
+- `create` (backups), `download`, `read-content`\
+  _Can backup but not restore (safest for shared access)._
+
+### **Full Admin Role**
+
+- **All permissions** _(Use sparingly\!)_
+
+---
+
+## **4. Key Notes**
+
+⚠️ **Dangerous Permissions**:
+
+- `download` (backups): Grants full file access.
+- `restore`: Can overwrite all server data.
+- `delete` (users): Irreversible.
+
+🔒 **Best Practices**:
+
+- Use **least privilege**—only grant what’s needed.
+- Audit users monthly under **Activity** tab.
+
+---
+
+## **5. Troubleshooting**
+
+| **Issue**                     | **Fix**                      |
+| :---------------------------- | :--------------------------- |
+| User can’t access server      | Check if invite was accepted |
+| Permissions not working       | Re-save their permissions    |
+| Accidentally gave full access | Edit user immediately        |

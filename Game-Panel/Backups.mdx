@@ -1,0 +1,104 @@
+---
+title: "Backups"
+---
+
+### **What You Can Do**
+
+✅ **Create manual backups** (full server snapshots)\
+✅ **Schedule auto-backups** (via **Schedules** tab)\
+✅ **Download/Restore** backups\
+✅ **Set retention rules** (auto-delete old backups)
+
+### **Main Components**
+
+| **Section**          | **Description**                               |
+| :------------------- | :-------------------------------------------- |
+| **Backup List**      | Shows all backups (name, size, creation date) |
+| **Create Backup**    | Manual backup button                          |
+| **⋮ (Actions Menu)** | Download, restore, lock, or delete backups    |
+
+---
+
+## **2. How to Create a Backup**
+
+### **Manual Backup**
+
+1. Click **"Create Backup"** (top-right).
+2. Optional: Add a **description** (e.g., "Pre-Update Backup").
+3. Click **"Start Backup"** → Wait for completion (progress bar appears).
+
+➡️ _Backups include _**_all files, databases, and configurations_**_._
+
+### **Automated Backups**
+
+1. Go to **Schedules** tab → Create a new schedule.
+2. Set:
+   - **Action:** `Create Backup`
+   - **Frequency:** (e.g., `0 3 * * *` for daily 3 AM backups)
+   - **Retention:** Keep last `X` backups (prevents disk overload).
+
+---
+
+## **3. Managing Backups**
+
+### **Backup Actions (⋮ Menu)**
+
+| **Action**   | **Purpose**                                                    |
+| :----------- | :------------------------------------------------------------- |
+| **Download** | Save backup locally (`.zip`/`.tar.gz`)                         |
+| **Restore**  | Roll back server to this backup _(overwrites current files\!)_ |
+| **Lock**     | Prevent auto-deletion (for critical backups)                   |
+| **Delete**   | Free up disk space                                             |
+
+### **Restoring a Backup**
+
+1. Click **⋮ → Restore** on the desired backup.
+2. Confirm → Server will **stop**, restore, then **restart**.
+3. Check **Console** for errors.
+
+⚠️ **Warning**:
+
+- Restoring **overwrites all current files**.
+- Ensure the server is **backed up again** before restoring.
+
+---
+
+## **4. Backup Settings**
+
+### **Retention Rules**
+
+- Set in **Schedules** → `Create Backup` action.
+- Example: Keep last `7` backups → Older ones auto-delete.
+
+### **File Inclusions/Exclusions**
+
+- By default, backups include:
+  - All server files
+  - Databases
+  - Configs
+- Exclude files by adding to `.pterodactyl-backup-ignore` (advanced).
+
+---
+
+## **5. Troubleshooting**
+
+| **Issue**     | **Solution**                                      |
+| :------------ | :------------------------------------------------ |
+| Backup fails  | Check **disk space** (7.96 GiB free in your case) |
+| Restore stuck | Verify server **stopped** properly first          |
+| Slow backups  | Reduce backup size (exclude logs/worlds)          |
+
+---
+
+## **6. Pro Tips**
+
+🔹 **Lock important backups** (e.g., "Pre-Plugin-Update").\
+🔹 **Test restores** on a test server first.\
+🔹 **Monitor disk usage** under **Settings** → **Resource Limits**.
+
+---
+
+### **Need Help?**
+
+➡️ **Check backup logs** in the **Activity** tab.\
+➡️ **Join Discord**: [XGamingServer Support](https://discord.gg/Jx5KjXTsRS).
