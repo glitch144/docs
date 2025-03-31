@@ -2,48 +2,53 @@
 title: "Files"
 ---
 
-The Files tab is your server's file manager, allowing you to directly access, edit, and organize all server files via a web interface.
+The Files tab is your server's file manager. It allows you to access, edit, and organize all server files directly via a web interface.
 
 ---
 
 ### **Main Components**
 
-#### **1. Top Toolbar**
+#### 
 
-- **Search Files...**
-  - Quickly locate files by name (supports wildcards like `*.yml`).
-- **Pull File**
-  - Download files from external URLs directly to your server.
-- **Create Directory**
-  - Make new folders (e.g., `/plugins`, `/backups`).
-- **Upload**
-  - Drag-and-drop or select files to upload (supports `.zip`, `.jar`, etc.).
-- **New File**
-  - Create empty files (e.g., `config.yml`, `permissions.json`).
+<AccordionGroup>
+  <Accordion title="Top Toolbar" icon="sparkles">
+    - **Search Files...**
+      - Quickly locate files by name (supports wildcards like `*.yml`).
+    - **Pull File**
+      - Download files from external URLs directly to your server.
+    - **Create Directory**
+      - Make new folders (e.g., `/plugins`, `/backups`).
+    - **Upload**
+      - Drag-and-drop or select files to upload (supports `.zip`, `.jar`, etc. Upto 100 MB).
+    - **New File**
+      - Create empty files (e.g., `config.yml`, `permissions.json`).
 
-#### **2. File List**
+        ![Image 2025 03 31 123949578 Pn](/images/image_2025-03-31_123949578.png)
+  </Accordion>
+  <Accordion title="File List" icon="sparkles">
+    - Displays all files in `/home/container/` (default root directory).
+    - **Clicking a file** opens it in:
+      - **Built-in editor** (for text files like `.yml`, `.txt`).
+      - **Download prompt** (for binaries like `.jar`, `.zip`).
+    - **Checkboxes** appear when hovering for bulk actions.
+  </Accordion>
+  <Accordion title="Three-Dot Menu " icon="sparkles">
+    - **Rename** → Change file/folder names.
+    - **Move** → Relocate to another directory.
+    - **Permissions** → Set `755`, `644`, etc. (Linux-style).
+    - **Archive** → Compress to `.zip`/`.tar.gz`.
+    - **Delete** → Permanently remove (no recycle bin\!).
 
-- Displays all files in `/home/container/` (default root directory).
-- **Clicking a file** opens it in:
-  - **Built-in editor** (for text files like `.yml`, `.txt`).
-  - **Download prompt** (for binaries like `.jar`, `.zip`).
-- **Checkboxes** appear when hovering for bulk actions.
+    #### 
+  </Accordion>
+  <Accordion title="Bulk Actions (Bottom Bar)" icon="sparkles">
+    Appears when selecting files/folders:
 
-#### **3. Right-Click/Three-Dot Menu (Per File)**
-
-- **Rename** → Change file/folder names.
-- **Move** → Relocate to another directory.
-- **Permissions** → Set `755`, `644`, etc. (Linux-style).
-- **Archive** → Compress to `.zip`/`.tar.gz`.
-- **Delete** → Permanently remove (no recycle bin\!).
-
-#### **4. Bulk Actions (Bottom Bar)**
-
-Appears when selecting files/folders:
-
-- **Move** → Transfer multiple items at once.
-- **Archive** → Bundle selected files into one archive.
-- **Delete** → Mass removal (caution: irreversible).
+    - **Move** → Transfer multiple items at once.
+    - **Archive** → Bundle selected files into one archive.
+    - **Delete** → Mass removal (caution: irreversible).
+  </Accordion>
+</AccordionGroup>
 
 ---
 
@@ -54,30 +59,17 @@ Appears when selecting files/folders:
 - **Path Navigation** → Click folder names to traverse directories.
 - **Keyboard Shortcuts**:
   - `Ctrl+F` → Search
-  - `Ctrl+Click` → Multi-select files
 
 ---
 
 ### **Common Use Cases**
 
 1. **Installing Mods/Plugins**
-   - Upload `.jar` files to `/plugins/` (Bukkit) or `/mods/` (Forge).
+   - Upload `.jar` files to `/plugins/` ).
 2. **Editing Configs**
    - Modify `server.properties`, `settings.ini`, etc., in real time.
 3. **Cleaning Space**
    - Delete old logs (`/logs/`) or unused worlds.
-
----
-
-### **Troubleshooting**
-
-| **Issue**           | **Solution**                                                        |
-| :------------------ | :------------------------------------------------------------------ |
-| "Permission Denied" | Use **Permissions** option to set `755` (folders) or `644` (files). |
-| Upload fails        | Check disk space (`7.96 GiB` left in your case).                    |
-| Broken archives     | Re-upload or use **Pull File** with direct download links.          |
-
----
 
 ### **Pro Tips**
 
