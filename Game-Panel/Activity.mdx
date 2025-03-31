@@ -1,0 +1,203 @@
+---
+title: "Activity"
+---
+
+## **Overview**
+
+The **Settings Tab** is your central hub for server administration, security, and maintenance. Use it to manage credentials, metadata, and critical operations.
+
+---
+
+## **Key Sections**
+
+### **1. SFTP Access**
+
+_Securely manage server files via SFTP without full panel access._
+
+| **Field**          | **Description**                                         |
+| :----------------- | :------------------------------------------------------ |
+| **Server Address** | Pre-configured hostname (e.g., `node.xgaming.pro:2022`) |
+| **Username**       | Unique per-server credential (masked for security)      |
+| **Password**       | Same as your panel login                                |
+| **Launch SFTP**    | One-click button to open FileZilla/WinSCP               |
+
+**Notes**:
+
+- SFTP uses port **2022** by default (non-standard for security)
+- Credentials rotate automatically during server transfers
+
+---
+
+## **2. Server Metadata**
+
+### **Server Identification**
+
+| **Field**       | **Purpose**           | **Example**                   |
+| :-------------- | :-------------------- | :---------------------------- |
+| **Server Name** | Display name in panel | `Claude mcp`                  |
+| **Description** | Internal notes        | `Production Server - US West` |
+
+**To Modify**:
+
+1. Edit text fields
+2. Click **Save**
+
+---
+
+## **3. Critical Operations**
+
+### **A. Reinstall Server**
+
+_Wipes all files and rebuilds from scratch._
+
+⚠️ **Warnings**:
+
+- Deletes **all data** except backups
+- Resets configurations to default
+
+**Process**:
+
+1. Create backup via **Backups Tab**
+2. Click **Reinstall Server**
+3. Confirm → Wait 5-15 mins
+
+**Common Reasons to Reinstall**:
+
+- Corrupted game files
+- Major version upgrades
+- Switching server types
+
+---
+
+## **4. Debug Information**
+
+_For support team use only._
+
+| **Field**     | **Purpose**                |
+| :------------ | :------------------------- |
+| **Node**      | Physical/Virtual host ID   |
+| **Server ID** | Unique instance identifier |
+
+---
+
+## **Best Practices**
+
+1. **Never share SFTP credentials** – Use subuser permissions instead
+2. **Update descriptions** after major changes
+3. **Test reinstalls** on cloned servers first
+
+---
+
+## **Troubleshooting**
+
+| **Issue**              | **Solution**                                      |
+| :--------------------- | :------------------------------------------------ |
+| SFTP connection failed | Verify port **2022** is open in firewall          |
+| "Invalid credentials"  | Reset panel password → SFTP updates automatically |
+| Reinstall stuck        | Contact support with **Server ID**                |
+
+---
+
+## **Support**
+
+For urgent issues:\
+➡️ [XGamingServer Discord](https://discord.gg/Jx5KjXTsRS)\
+➡️ Include **Server ID** when submitting tickets
+
+_Note: Sensitive fields are masked to protect your server’s security._
+
+finaly do activity tab
+
+# **Activity Tab - Server Logs & Audit Tracking**
+
+---
+
+## **Overview**
+
+The **Activity Tab** provides a comprehensive audit trail of all server events, including:
+
+- 🛠️ Administrative actions
+- 🔄 Server state changes
+- 🔍 User activity logs
+- ⚠️ System warnings/errors
+
+---
+
+## **Key Sections**
+
+### **1. Event Timeline**
+
+_A chronological feed of server activities:_
+
+| **Event Type**      | **Description**                   | **Example**                           |
+| :------------------ | :-------------------------------- | :------------------------------------ |
+| **Power Actions**   | Server starts/stops/restarts      | `Server restarted by admin@email.com` |
+| **File Changes**    | File edits, uploads, deletions    | `Updated server.properties`           |
+| **User Management** | Subuser additions/removals        | `Added moderator@email.com`           |
+| **Backups**         | Backup creation/restoration       | `Backup "Pre-Update" completed`       |
+| **Security Events** | Failed logins, permission changes | `Failed SFTP login attempt`           |
+
+---
+
+### **2. Filtering & Search**
+
+Refine logs using:
+
+- **Time range** (Last 24h, 7 days, custom)
+- **Event type** (Power, Files, Users, etc.)
+- **User** (Filter by admin/subuser)
+- **Keyword search** (e.g., "backup failed")
+
+---
+
+### **3. Log Details**
+
+Click any entry to view:
+
+- **Full command/output** (e.g., exact startup command used)
+- **Associated user** (with IP address)
+- **Timestamp** (in your local timezone)
+
+---
+
+## **Common Use Cases**
+
+### **A. Debugging Server Issues**
+
+1. Check for recent errors before a crash
+2. Verify scheduled tasks executed properly
+
+### **B. Security Auditing**
+
+1. Review unauthorized access attempts
+2. Track permission changes
+
+### **C. Accountability**
+
+1. Monitor team member actions
+2. Revert unintended changes
+
+---
+
+## **Best Practices**
+
+1. **Cross-reference** with **Console** for technical details
+2. **Enable Two-Factor Authentication (2FA)**
+3. **Regularly Review Permission Changes**
+
+---
+
+## **Troubleshooting**
+
+| **Issue**           | **Solution**                               |
+| :------------------ | :----------------------------------------- |
+| Missing logs        | Check time range filters                   |
+| "Unknown user"      | User was deleted but actions remain logged |
+| Suspicious activity | Revoke credentials \+ contact support      |
+
+---
+
+## **Support**
+
+For log analysis:\
+➡️ [XGamingServer Discord](https://discord.gg/Jx5KjXTsRS)
