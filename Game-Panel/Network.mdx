@@ -1,0 +1,118 @@
+---
+title: "Network"
+---
+
+Controls all networking aspects of your game server.
+
+### **Key Features**
+
+| **Feature**            | **What It Does**        | **Access Level** |
+| :--------------------- | :---------------------- | :--------------- |
+| **Primary Allocation** | Main server IP:Port     | Admin Only       |
+| **Extra Ports**        | Add secondary ports     | Admin/Subusers\* |
+| **Subdomains**         | Create custom domains   | Admin/Subusers\* |
+| **Network Stats**      | Live traffic monitoring | All Users        |
+
+\*Depends on assigned permissions
+
+---
+
+## **1. Primary Allocation**
+
+**Shows your server's main connection details:**
+
+| **Field**  | **Example**       | **Description**   |
+| :--------- | :---------------- | :---------------- |
+| IP Address | `178.156.160.221` | Public server IP  |
+| Port       | `2456`            | Primary game port |
+| Status     | `Active`          | Connection state  |
+
+⚠️ **Note**: Changing this may disconnect players.
+
+---
+
+## **2. Adding Extra Ports**
+
+### **Step-by-Step**
+
+1. Click **"Create Allocation"**
+2. Fill in:
+
+| **Field** | **Required?** | **Notes**                  |
+| :-------- | :------------ | :------------------------- |
+| IP        | Yes           | Auto-populated             |
+| Port      | Yes           | Unique number (2000-65000) |
+| Notes     | No            | e.g., "Webpanel Port"      |
+
+1. Click **Submit**
+
+### **Common Port Uses**
+
+| **Port**    | **Typical Use**      |
+| :---------- | :------------------- |
+| `2456-2458` | Game server \+ query |
+| `8080`      | Web control panels   |
+| `25565`     | Default Minecraft    |
+
+---
+
+## **3. Subdomain Management**
+
+### **Creating/Editing Subdomains**
+
+When you click **Update Subdomain**, you'll see:
+
+| **Field**  | **Example Value**         | **Rules**            |
+| :--------- | :------------------------ | :------------------- |
+| Subdomain  | `proxy`                   | Lowercase, no spaces |
+| Domain     | `dedicatedminecraft.host` | Auto-filled by host  |
+| Allocation | `178.156.160.221:2456`    | Must be active port  |
+
+**Best Practices**:
+
+- Use `mc.`, `play.`, or `map.` prefixes
+- Point to ports running web services (not game ports)
+
+---
+
+## **4. Permission Reference**
+
+### **What Users Can Do**
+
+| **Permission**      | **Allows**     |
+| :------------------ | :------------- |
+| `allocation.read`   | View ports     |
+| `allocation.create` | Add new ports  |
+| `subdomain.update`  | Edit domains   |
+| `subdomain.delete`  | Remove domains |
+
+---
+
+## **5. Troubleshooting**
+
+### **Common Issues**
+
+| **Problem**          | **How to Fix**                                                |
+| :------------------- | :------------------------------------------------------------ |
+| **Port not working** | 1. Check server is running\ 2. Verify firewall allows traffic |
+| **Subdomain error**  | 1. Wait 30 mins for DNS\ 2. Check port allocation             |
+| **High bandwidth**   | 1. Check for DDoS\ 2. Limit player slots                      |
+
+### **Network Testing**
+
+```
+# Linux/macOS:
+ping yourdomain.com
+traceroute 178.156.160.221
+
+# Windows:
+ping yourdomain.com
+tracert 178.156.160.221
+```
+
+---
+
+## **Support**
+
+For advanced help:\
+➡️ [Join Our Discord](https://discord.gg/Jx5KjXTsRS)

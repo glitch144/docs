@@ -1,0 +1,93 @@
+---
+title: "Startup"
+---
+
+## **1. Overview**
+
+The **Startup Tab** is where you configure critical settings for your game server’s launch behavior. Most configurations are **pre-configured** based on your server type, but advanced users can fine-tune parameters here.
+
+---
+
+## **2. Key Features**
+
+### **A. Pre-Configured Startup Command**
+
+- **What it does**: Automatically generated based on your server type (e.g., Minecraft, Rust, Valheim).
+- **No action needed**: Optimized by default for stability and performance.
+- **Advanced use**: Edit _only_ if you understand the impact (e.g., adding JVM flags for Java servers).
+
+### **B. Docker Image Selection**
+
+- **Pre-selected**: The optimal image is chosen for your game (e.g., `java-17` for Java servers).
+- **Dropdown option**: Available if multiple images are compatible (rarely needs adjustment).
+- **Warning**: Changing this may break your server unless you’re experienced with Docker.
+
+---
+
+## **3. Core Settings**
+
+### **Environment Variables**
+
+These control server behavior without editing files. Common variables include:
+
+| **Variable**      | **Purpose**              | **Example Value**    |
+| :---------------- | :----------------------- | :------------------- |
+| `SERVER_NAME`     | Server’s public name     | `"XGamingServer #1"` |
+| `MAX_PLAYERS`     | Player slots             | `32`                 |
+| `SERVER_PASSWORD` | Join password            | `"secret123"`        |
+| `WORLD_NAME`      | Map/world name           | `"Map_Alpha"`        |
+| `AUTO_UPDATE`     | Auto-update server files | `true`/`false`       |
+
+---
+
+## **4. Advanced Configuration**
+
+### **A. Memory Allocation**
+
+- **Pre-set**: Matches your server plan’s RAM/CPU limits.
+- **Override carefully**: Example for Java:
+
+  bash
+
+  Copy
+
+  ```
+  -Xms2G  # Initial RAM
+  -Xmx4G  # Max RAM
+  ```
+
+### **B. Network Ports**
+
+- **Auto-assigned**: Primary port set during server creation.
+- **Custom ports**: Add via the **Network Tab** if needed.
+
+### **C. Auto-Update System**
+
+- Enabled by default to:
+  1. Fetch game updates on startup
+  2. Apply security patches
+
+---
+
+## **5. Best Practices**
+
+1. **Test changes**: Use the **Schedules Tab** to test startup commands on a copy.
+2. **Backup first**: Use the **Backups Tab** before modifying variables.
+3. **Monitor stats**: Check **Console** logs after changes.
+
+---
+
+## **6. Troubleshooting**
+
+| **Issue**                 | **Solution**                                |
+| :------------------------ | :------------------------------------------ |
+| Server crashes on startup | Restore the default startup command         |
+| “Port in use” error       | Change conflicting ports in **Network Tab** |
+| Variables not applying    | Check for typos and restart the server      |
+
+---
+
+## **7. Support**
+
+For help with advanced configurations:\
+➡️ [Join Our Discord](https://discord.gg/Jx5KjXTsRS)
