@@ -1,0 +1,105 @@
+---
+title: "Settings"
+---
+
+## **Overview**
+
+The **Settings Tab** is your central hub for server administration, security, and maintenance. Use it to manage credentials, metadata, and critical operations.
+
+---
+
+## **Key Sections**
+
+### **1. SFTP Access**
+
+_Securely manage server files via SFTP without full panel access._
+
+| **Field**          | **Description**                                         |
+| :----------------- | :------------------------------------------------------ |
+| **Server Address** | Pre-configured hostname (e.g., `node.xgaming.pro:2022`) |
+| **Username**       | Unique per-server credential                            |
+| **Password**       | Same as your panel login                                |
+| **Launch SFTP**    | One-click button to open FileZilla/WinSCP               |
+
+**Notes**:
+
+- SFTP uses port **2022** by default (non-standard for security)
+- Credentials rotate automatically during server transfers
+
+---
+
+## **2. Server Metadata**
+
+### **Server Identification**
+
+| **Field**       | **Purpose**           | **Example**        |
+| :-------------- | :-------------------- | :----------------- |
+| **Server Name** | Display name in panel | `Xgaming`          |
+| **Description** | Internal notes        | `Server - US West` |
+
+**To Modify**:
+
+1. Edit text fields
+2. Click **Save**
+
+---
+
+## **3. Critical Operations**
+
+### **A. Reinstall Server**
+
+_Wipes all files and rebuilds from scratch._
+
+⚠️ **Warnings**:
+
+- Deletes **all data** except backups
+- Resets configurations to default
+
+**Process**:
+
+1. Create backup via the **Backups Tab**
+2. Click **Reinstall Server**
+3. Confirm → Wait 5-15 mins
+
+**Common Reasons to Reinstall**:
+
+- Corrupted game files
+- Major version upgrades
+- Switching server types
+
+---
+
+## **4. Debug Information**
+
+_For support team use only._
+
+| **Field**     | **Purpose**                |
+| :------------ | :------------------------- |
+| **Node**      | Physical/Virtual host ID   |
+| **Server ID** | Unique instance identifier |
+
+---
+
+## **Best Practices**
+
+1. **Never share SFTP credentials** – Use subuser permissions instead
+2. **Update descriptions** after major changes
+3. **Test reinstalls** on cloned servers first
+
+---
+
+## **Troubleshooting**
+
+| **Issue**              | **Solution**                                      |
+| :--------------------- | :------------------------------------------------ |
+| SFTP connection failed | Verify port **2022** is open in firewall          |
+| "Invalid credentials"  | Reset panel password → SFTP updates automatically |
+| Reinstall stuck        | Contact support with **Server ID**                |
+
+---
+
+## **Support**
+
+For urgent issues:\
+➡️ [XGamingServer Discord](https://discord.gg/Jx5KjXTsRS)\
+➡️ Include **Server ID** when submitting tickets
