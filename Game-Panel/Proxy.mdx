@@ -1,0 +1,88 @@
+---
+title: "Proxy"
+---
+
+## **Overview**
+
+The Proxy Tab allows you to create and manage reverse proxies for your game servers, enabling custom domains and SSL encryption for secure connections.
+
+---
+
+## **Creating a New Proxy**
+
+When you click **"Create new proxy"**, you'll see the following configuration options:
+
+### **1. Proxy Domain**
+
+- **Requirement**: Must be a valid domain you own (e.g., `games.yourdomain.com`)
+- **Purpose**: The public URL players will use to connect
+- **Note**: DNS must point to your server IP before creating
+
+### **2. Allocation**
+
+- **Function**: Links to your server's IP and port
+- **Security**: IP address is automatically hidden in the interface
+- **Format**: `[hidden].2456` (port remains visible)
+
+### **3. SSL Options**
+
+| **Option**            | **Description**             | **Recommended**                    |
+| :-------------------- | :-------------------------- | :--------------------------------- |
+| **Enable SSL**        | Activates HTTPS encryption  | Always enable                      |
+| **Use Let's Encrypt** | Free automatic certificates | Yes (unless you have custom certs) |
+
+---
+
+## **Proxy Management**
+
+### **Active Proxy List**
+
+View and manage existing proxies with:
+
+- **Domain**: The public-facing URL
+- **Status**: Active/Expired/Error
+- **SSL**: Certificate expiration date
+- **Actions**: Edit/Delete/Renew
+
+### **Auto-Renewal**
+
+Let's Encrypt certificates automatically renew 30 days before expiration when:
+
+1. Domain DNS remains properly configured
+2. Server is accessible on standard HTTPS port (443)
+
+---
+
+## **Best Practices**
+
+1. **Domain Setup**
+   - Create a `CNAME` record pointing to your server IP
+   - Allow 1-24 hours for DNS propagation
+2. **SSL Configuration**
+
+   nginx
+
+   Copy
+
+   ```
+   # Recommended SSL settings (auto-configured)
+   ssl_protocols TLSv1.2 TLSv1.3;
+   ssl_ciphers HIGH:!aNULL:!MD5;
+   ```
+3. **Security**
+   - Never expose backend ports publicly
+   - Use fail2ban for proxy protection
+
+---
+
+## **Troubleshooting**
+
+| **Issue**        | **Solution**                                            |
+| :--------------- | :------------------------------------------------------ |
+| "Invalid domain" | Verify DNS propagation with `dig +short yourdomain.com` |
+| SSL errors       | Check port 443 is open in firewall                      |
+| Proxy offline    | Restart the proxy service via **Settings**              |
+
+<Info>
+  For advanced help: [Join our Discord](https://discord.gg/Jx5KjXTsRS)
+</Info>
