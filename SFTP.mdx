@@ -1,0 +1,180 @@
+# Connecting to Your Xgamingserver via SFTP with Pterodactyl Panel
+
+This guide provides step-by-step instructions for securely accessing your game server files using SFTP (SSH File Transfer Protocol) through the Pterodactyl control panel.
+
+## Table of Contents
+1. [Prerequisites](#prerequisites)
+2. [Locating Your SFTP Credentials](#locating-your-sftp-credentials)
+3. [Connecting with FileZilla](#connecting-with-filezilla)
+4. [Connecting with WinSCP](#connecting-with-winscp)
+5. [Command Line Connection](#command-line-connection)
+6. [File System Navigation](#file-system-navigation)
+7. [Troubleshooting](#troubleshooting)
+8. [Security Recommendations](#security-recommendations)
+
+## Prerequisites <a name="prerequisites"></a>
+
+Before beginning, ensure you have:
+- Active game server on Xgamingserver's Pterodactyl panel
+- SFTP client software installed (recommended options):
+  - [FileZilla](https://filezilla-project.org/) (Windows/macOS/Linux)
+  - [WinSCP](https://winscp.net/) (Windows)
+  - [Cyberduck](https://cyberduck.io/) (macOS/Windows)
+- Your Pterodactyl panel login credentials
+- Server IP address (provided in your welcome email)
+
+## Locating Your SFTP Credentials <a name="locating-your-sftp-credentials"></a>
+
+1. Log in to your Pterodactyl panel at: `https://panel.xgamingserver.com`
+2. Select your game server from the dashboard
+3. In the server management interface, look for the "SFTP Details" section (typically in the sidebar or under "Server Configuration")
+4. Note these critical details:
+   - **Hostname**: `sftp.xgamingserver.com` or your dedicated server IP
+   - **Port**: `2022` (default Pterodactyl SFTP port)
+   - **Username**: This is your panel username (email address) + server identifier (e.g., `user@email.com-server`)
+   - **Password**: Your Pterodactyl account password (or dedicated SFTP password if configured)
+   - **Connection Protocol**: Must be SFTP (not regular FTP)
+
+Important: If you don't see SFTP details, contact Xgamingserver support as your user account may need SFTP permissions enabled.
+
+## Connecting with FileZilla <a name="connecting-with-filezilla"></a>
+
+### Initial Setup
+1. Launch FileZilla and open Site Manager (File > Site Manager or Ctrl+S)
+2. Click "New Site" and name it (e.g., "Xgamingserver - MyServer")
+3. Configure the connection:
+   - Protocol: SFTP - SSH File Transfer Protocol
+   - Host: Your server hostname or IP
+   - Port: 2022
+   - Logon Type: Normal
+   - User: Your full SFTP username (including server identifier)
+   - Password: Your SFTP password
+
+### First Connection
+1. Click "Connect"
+2. If prompted about an unknown host key:
+   - Verify the fingerprint matches one of these (check with support if unsure):
+     ````bash
+     RSA: SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+     ECDSA: SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+     ````
+   - Check "Always trust this host" if verified
+   - Click "OK"
+
+### Post-Connection
+- The remote directory will automatically open at `/home/container/`
+- Left panel shows your local files, right panel shows server files
+- Drag-and-drop files between panels to transfer
+
+## Connecting with WinSCP <a name="connecting-with-winscp"></a>
+
+1. Launch WinSCP and click "New Session"
+2. Select "SFTP" as file protocol
+3. Enter connection details:
+   - Host name: Your server hostname or IP
+   - Port number: 2022
+   - User name: Full SFTP username
+   - Password: Your SFTP password
+4. Click "Save" to store these credentials
+5. Click "Login" to connect
+6. When asked about server host key, verify the fingerprint matches:
+   - Click "Yes" to continue and cache the key
+
+## Command Line Connection <a name="command-line-connection"></a>
+
+For Linux/macOS terminals or Windows (using PuTTY or WSL):
+
+````bash
+sftp -P 2022 username@hostname.xgamingserver.com
+
+Example with actual credentials:
+
+```bash
+sftp -P 2022 john@example.com-server@sftp.xgamingserver.com
+```
+## Command Line Connection <a name="command-line-connection"></a>
+
+When prompted, enter your password. Once connected, you'll see the `sftp>` prompt.
+
+Common commands:
+
+```bash
+ls            # List files
+cd directory  # Change directory
+get filename  # Download file
+put filename  # Upload file
+exit          # Close connection
+```
+
+## File System Navigation <a name="file-system-navigation"></a>
+
+After successful connection, you'll have access to these key directories:
+
+```bash
+/home/container/       # Main server directory containing:
+  /plugins/           # Bukkit/Spigot plugins
+  /mods/              # Forge/Fabric mods
+  /world/             # World save files
+  server.properties   # Main configuration file
+  # Other game-specific configuration files
+```
+
+Important Notes:
+- The container is chrooted - you cannot access files outside `/home/container/`
+- File permissions are maintained - some files may be read-only
+- Configuration changes often require server restart to take effect
+
+## Troubleshooting <a name="troubleshooting"></a>
+
+### Connection Issues
+
+**"Connection refused" or timeout:**
+```bash
+# Verify server status via Pterodactyl console
+service status
+# Check connection
+telnet sftp.xgamingserver.com 2022
+```
+
+**"Authentication failed":**
+- Ensure username format: `email+server@domain.com`
+- Reset password in Pterodactyl panel
+- Check for special characters in password
+
+**"Host key verification failed":**
+```bash
+# Remove old host key (Linux/Mac)
+ssh-keygen -R sftp.xgamingserver.com
+```
+
+### File Transfer Issues
+
+**Permission denied when uploading:**
+```bash
+# Check permissions
+ls -la /home/container/
+# Set permissions (via Pterodactyl console)
+chmod 755 filename
+```
+
+**Incomplete transfers:**
+```bash
+# Check disk space
+df -h /home/container
+```
+
+## Security Recommendations <a name="security-recommendations"></a>
+
+### SSH Key Setup
+```bash
+# Generate keys (in Pterodactyl panel)
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+### Connection Security
+```bash
+# Verify host fingerprint
+ssh-keyscan -p 2022 sftp.xgamingserver.com
+```
+
+For additional help, contact [Xgamingserver support](mailto:support@xgamingserver.com) or join our [Discord support channel](https://discord.gg/xgamingserver).
