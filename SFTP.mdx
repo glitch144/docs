@@ -12,7 +12,7 @@ Whether you need to modify configuration files, upload plugins/mods, or download
 
 <Steps>
   <Step title="Login into the Panel">
-    1. Go to [**panel.xgamingserver.com**](http://panel.xgamingserver.com)
+    1. [**panel.xgamingserver.com**](http://panel.xgamingserver.com)
     2. Log in with your credentials.
     3. Click on your **server** to open its dashboard.
   </Step>
@@ -28,22 +28,51 @@ Whether you need to modify configuration files, upload plugins/mods, or download
        ![SFTP Sv](/SVG/SFTP.svg)
   </Step>
   <Step title="Manual connection on Filezilla and WinSCP">
-    1. **FileZilla**: Open _Site Manager_ → New Site → Enter **Host** (`sftp.xgamingserver.com`), **Port** (`2022`), **Username** (`your@email-server`), and **Protocol** (_SFTP_) → Click _Connect_ → **Enter password** when prompted.
-    2. **WinSCP**: Launch → _New Session_ → Select _SFTP_ → Fill **Hostname** (`sftp.xgamingserver.com`), **Port** (`2022`), and **Username** (`your@email-server`) → Click _Login_ → **Type password** to connect.
+    **Filezilla**
+
+    <Steps>
+      <Step title="Adding a new site">
+        Open _Site Manager_
+
+        New Site
+
+        Enter **Host** (`sftp.xgamingserver.com`)
+
+        **Port** (`2022`),
+
+        ![Filezilla Pn](/SVG/filezilla.png)
+      </Step>
+      <Step title="Username and password">
+        **Username** (`your@email-server`),
+
+        **Enter the password** when prompted.
+
+        ![User Pn](/SVG/user.png)
+      </Step>
+    </Steps>
+    **WinSCP**
+
+    <Steps>
+      <Step title="Add host">
+        1. Launch 
+        2.  _New Session_ 
+        3.  Select _SFTP_ 
+        4.  Fill **Hostname** (`sftp.xgamingserver.com`)
+        5.  **Port** (`2022`)
+
+           ![Win Pn](/SVG/win.png)
+      </Step>
+      <Step title="Username and Password">
+        1. **Username** (`your@email-server`) 
+        2.  **Type password** to connect.
+
+           ![Winuser Pn](/SVG/winuser.png)
+      </Step>
+    </Steps>
   </Step>
 </Steps>
 
-#### Command Line (Linux/Mac):
-
-Copy
-
-```
-sftp -P 2022 yourpanelemail-server@sftp.xgamingserver.com
-```
-
-(Enter password when prompted)
-
-### Common 
+### Common Uses
 
 #### Uploading Files:
 
