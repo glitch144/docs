@@ -1,0 +1,182 @@
+---
+title: "Community Managment"
+---
+
+Effective community management is key to maintaining a positive and engaging environment on your Minecraft server. This guide will walk you through setting up permissions, moderating players, and fostering a thriving community.
+
+## Part 1: Setting Up Permissions
+
+### Overview
+
+Permissions allow you to control what players can and cannot do on your server. Properly configuring permissions ensures fairness and prevents abuse.
+
+### Steps to Set Up Permissions
+
+#### Step 1: Install a Permissions Plugin
+
+1. Use the **Plugins Tab** to install a permissions plugin like **LuckPerms**.
+2. Restart the server to load the plugin.
+
+#### Step 2: Configure Permissions
+
+1. Open the plugin’s configuration file via the **File Manager** (e.g., `config.yml` for LuckPerms).
+2. Define user groups and assign permissions:
+
+   ```yaml
+   # Example: LuckPerms config.yml
+   default_group: member
+   
+   groups:
+     admin:
+       permissions:
+         - "*"
+     moderator:
+       permissions:
+         - "essentials.kick"
+         - "essentials.mute"
+   ```
+3. Apply changes by restarting the server or reloading the plugin.
+
+#### Step 3: Assign Roles to Players
+
+- Use in-game commands to assign roles:
+
+  ```text
+  /lp user PlayerName parent add moderator
+  ```
+
+<tip>
+  Use the principle of least privilege—only grant permissions necessary for each role.
+</tip>
+
+---
+
+## Part 2: Moderating Players
+
+### Overview
+
+Moderation tools help you enforce rules, handle griefers, and maintain a safe environment.
+
+### Essential Moderation Plugins
+
+1. **LiteBans**:
+   - Ban, mute, or warn players for rule violations.
+   - Commands:
+
+     ```text
+     /ban PlayerName Reason
+     /mute PlayerName Reason
+     ```
+2. **CoreProtect**:
+   - Track block changes and roll back griefing.
+   - Commands:
+
+     ```text
+     /co inspect
+     /co rollback t:1d
+     ```
+3. **MuteManager**:
+   - Manage chat muting and spam prevention.
+
+### Steps to Moderate Players
+
+1. Identify rule violators using logs or reports.
+2. Use moderation plugins to take action:
+   - Ban or mute repeat offenders.
+   - Roll back griefing using **CoreProtect**.
+
+<warning>
+  Always document rule violations and actions taken for transparency.
+</warning>
+
+---
+
+## Part 3: Engaging Your Community
+
+### Overview
+
+Engagement keeps players active and invested in your server. Use these strategies to build a thriving community.
+
+### Strategies for Engagement
+
+#### 1. Host Events
+
+- Organize events like PvP tournaments, treasure hunts, or building contests.
+- Announce events using in-game commands or Discord.
+
+#### 2. Create a Discord Server
+
+- Set up a Discord server for off-game communication.
+- Use bots like **Dyno** or **MEE6** to manage roles and announcements.
+
+#### 3. Reward Loyalty
+
+- Use plugins like **AdvancedAchievements** or **PlayerPoints** to reward players for milestones.
+
+#### 4. Gather Feedback
+
+- Use polls or surveys to gather player feedback.
+- Adjust rules or features based on community input.
+
+---
+
+## Part 4: Enforcing Rules
+
+### Overview
+
+Clear rules and consistent enforcement are essential for a healthy community.
+
+### Steps to Enforce Rules
+
+#### Step 1: Define Rules
+
+- Post rules in the server’s MOTD (`server.properties`) or on your website.
+- Example:
+
+  ```properties
+  motd=Welcome to the Server! Follow the rules: No griefing, no hacking.
+  ```
+
+#### Step 2: Communicate Consequences
+
+- Clearly state consequences for breaking rules (e.g., warnings, bans).
+
+#### Step 3: Monitor Activity
+
+- Use moderation plugins to track player activity.
+- Regularly review logs for suspicious behavior.
+
+---
+
+## Troubleshooting Common Issues
+
+### Issue: Toxic Behavior
+
+- **Cause**: Lack of clear rules or inconsistent enforcement.
+- **Solution**:
+  1. Define and communicate clear rules.
+  2. Enforce consequences consistently.
+
+### Issue: Inactive Community
+
+- **Cause**: Lack of engagement or outdated content.
+- **Solution**:
+  1. Host regular events and update server features.
+  2. Promote the server on social media and forums.
+
+### Issue: Griefing or Exploits
+
+- **Cause**: Missing anti-griefing plugins or unpatched exploits.
+- **Solution**:
+  1. Install plugins like **CoreProtect** or **WorldGuard**.
+  2. Keep server software and plugins updated.
+
+---
+
+## Best Practices
+
+- **Be Transparent**: Clearly communicate rules and decisions to your community.
+- **Stay Active**: Regularly interact with players to build trust.
+- **Encourage Positivity**: Reward good behavior and foster a welcoming environment.
+
+---

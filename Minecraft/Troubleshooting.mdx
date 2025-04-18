@@ -1,0 +1,185 @@
+---
+title: "New file"
+description: "Description of your new file."
+---
+
+Even with careful setup, Minecraft servers can encounter issues like crashes, lag, or connection errors. This guide will help you diagnose and resolve these problems effectively using XGamingServer’s control panel.
+
+---
+
+## Issue 1: Server Crashes
+
+### Symptoms
+
+- The server stops unexpectedly.
+- Players are disconnected without warning.
+
+### Possible Causes and Solutions
+
+#### Cause: Outdated Plugins/Mods
+
+- **Solution**:
+  1. Check the **Logs Tab** for error messages related to plugins/mods.
+  2. Update outdated plugins/mods via the **Plugins Tab** or manually.
+
+#### Cause: Insufficient Resources
+
+- **Solution**:
+  1. Go to the **Settings** tab and increase CPU/RAM allocations.
+  2. Use tools like **Spark** to monitor resource usage.
+
+#### Cause: Corrupted World Files
+
+- **Solution**:
+  1. Restore a backup from the **Backups Tab**.
+  2. Replace the corrupted `world` folder via the **File Manager**.
+
+---
+
+## Issue 2: Lag or Low TPS
+
+### Symptoms
+
+- Gameplay feels slow or unresponsive.
+- Ticks Per Second (TPS) drops below 20.
+
+### Possible Causes and Solutions
+
+#### Cause: High View Distance
+
+- **Solution**:
+  1. Lower the `view-distance` in `server.properties`:
+
+     ```properties
+     view-distance=6
+     ```
+  2. Restart the server to apply changes.
+
+#### Cause: Resource-Heavy Mods/Plugins
+
+- **Solution**:
+  1. Use **Spark** or **Timings** to identify problematic mods/plugins.
+  2. Remove or replace resource-heavy mods/plugins.
+
+#### Cause: Excessive Entities
+
+- **Solution**:
+  1. Install **ClearLag** via the **Plugins Tab**.
+  2. Configure it to remove lag-causing entities automatically.
+
+---
+
+## Issue 3: Connection Errors
+
+### Symptoms
+
+- Players cannot connect to the server.
+- Error messages like "Connection Refused" or "Invalid Session."
+
+### Possible Causes and Solutions
+
+#### Cause: Incorrect IP or Port
+
+- **Solution**:
+  1. Verify the server’s IP and port in the **Settings** tab.
+  2. Ensure players use the correct connection details (e.g., `your-server-ip:25565`).
+
+#### Cause: Firewall Restrictions
+
+- **Solution**:
+  1. Open the required ports (default: `25565`) in your firewall.
+  2. Follow our [Adding Additional Server Ports](/guides/additional-server-ports) guide for instructions.
+
+#### Cause: Online Mode Disabled
+
+- **Solution**:
+  1. Enable `online-mode=true` in `server.properties` for Mojang authentication.
+  2. Restart the server to apply changes.
+
+---
+
+## Issue 4: Plugin/Mod Conflicts
+
+### Symptoms
+
+- Plugins/mods do not work as expected.
+- Server crashes or behaves unpredictably.
+
+### Possible Causes and Solutions
+
+#### Cause: Incompatible Versions
+
+- **Solution**:
+  1. Check the plugin/mod’s documentation for compatibility with your server version.
+  2. Update or replace incompatible plugins/mods.
+
+#### Cause: Overlapping Functionality
+
+- **Solution**:
+  1. Identify overlapping plugins/mods (e.g., multiple economy plugins).
+  2. Remove or consolidate conflicting plugins/mods.
+
+---
+
+## Issue 5: Backup Failures
+
+### Symptoms
+
+- Backups fail to create or restore.
+- Backup files are corrupted or incomplete.
+
+### Possible Causes and Solutions
+
+#### Cause: Insufficient Disk Space
+
+- **Solution**:
+  1. Free up disk space by removing unused files.
+  2. Monitor disk usage via the **Settings** tab.
+
+#### Cause: Corrupted Files
+
+- **Solution**:
+  1. Test backups on a staging server before restoring.
+  2. Re-create the backup if necessary.
+
+---
+
+## Issue 6: Proxy Routing Issues
+
+### Symptoms
+
+- Players cannot connect to specific servers via the proxy.
+- Proxy fails to start or crashes.
+
+### Possible Causes and Solutions
+
+#### Cause: Incorrect Server IPs/Ports
+
+- **Solution**:
+  1. Verify the IPs and ports in the proxy configuration file (e.g., `velocity.toml`).
+  2. Restart the proxy and connected servers.
+
+#### Cause: SSL Certificate Errors
+
+- **Solution**:
+  1. Ensure the domain is valid and points to the correct IP.
+  2. Disable and re-enable SSL if necessary.
+
+---
+
+## General Troubleshooting Tips
+
+1. **Check Logs**: Always review logs in the **Logs Tab** for detailed error messages.
+2. **Test Changes**: Test changes on a staging server before applying them to production.
+3. **Backup Regularly**: Use the **Backups Tab** to schedule regular backups.
+4. **Engage the Community**: Seek help from forums like SpigotMC or Discord communities.
+
+---
+
+## Best Practices
+
+- Keep your server software, plugins, and mods updated.
+- Monitor server performance regularly using tools like **Spark**.
+- Secure your server with anti-cheat plugins and firewalls.
+
+---
