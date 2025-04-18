@@ -1,0 +1,75 @@
+---
+title: "New file"
+description: "Description of your new file."
+---
+
+Automation simplifies server management by scheduling tasks like restarts, backups, or commands. This guide will walk you through setting up automated tasks using XGamingServer’s **Schedules Tab**.
+
+<info>
+  This guide assumes you’ve already configured your server. If not, refer to our [Basic Configuration Guide](/guides/Basic-Setup).
+</info>
+
+---
+
+## Overview
+
+Automation helps reduce manual work and ensures tasks are performed consistently. Examples include:
+
+- Daily restarts to clear memory leaks.
+- Scheduled backups to protect your data.
+- Automated announcements to engage players.
+
+---
+
+## Steps to Automate Tasks
+
+### Step 1: Navigate to the Schedules Tab
+
+1. Log in to the [XGamingServer Control Panel](https://panel.xgamingserver.com).
+2. Select your server from the server list.
+3. Go to the **Schedules** tab in the server dashboard.
+
+### Step 2: Create a New Schedule
+
+1. Click **Create Schedule** and configure the task:
+   - **Task Type**: e.g., Restart Server, Send Command.
+   - **Frequency**: e.g., Daily at 2 AM.
+   - **Command**: e.g., `/say Server restarting in 5 minutes!`.
+2. Save the schedule.
+
+---
+
+### Step 3: Test the Automation
+
+1. Manually trigger the schedule to ensure it works as expected.
+2. Monitor logs for any errors or issues.
+
+---
+
+## Troubleshooting Common Issues
+
+### Issue: Task Not Executing
+
+- **Cause**: Incorrect frequency or command syntax.
+- **Solution**:
+  1. Verify the task’s frequency and command.
+  2. Test the command manually in the console.
+
+### Issue: Backup Fails During Automation
+
+- **Cause**: Insufficient disk space or corrupted files.
+- **Solution**:
+  1. Free up disk space by removing unused files.
+  2. Verify file integrity using the **File Manager**.
+
+---
+
+## Best Practices
+
+- Avoid exposing sensitive commands in automated tasks.
+- Schedule tasks during off-peak hours to minimize performance impact.
+- Regularly review schedules to ensure they’re still relevant.
+
+---
+
+Need further assistance? Contact our support team via the Panel

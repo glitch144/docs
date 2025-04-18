@@ -1,0 +1,97 @@
+---
+title: "Setting Up a Proxy for Minecraft Servers"
+description: "Learn how to set up a proxy (e.g., Velocity, BungeeCord) to manage multiple servers under a single connection."
+icon: "network-wired"
+---
+
+# Setting Up a Proxy for Minecraft Servers  
+
+A proxy (e.g., **Velocity**, **BungeeCord**) allows you to manage multiple servers under a single connection, improving scalability and player routing. This guide will walk you through setting up and configuring a proxy using XGamingServer’s control panel.  
+
+<Callout type="info">  
+This guide assumes you’ve already configured your server. If not, refer to our [Basic Configuration Guide](/guides/minecraft-basic-config).  
+</Callout>  
+
+---
+
+## Overview  
+
+Proxies are essential for:  
+- Connecting multiple servers (e.g., lobby, survival, minigames).  
+- Improving player routing and reducing latency.  
+- Handling authentication and load balancing.  
+
+Popular proxies include **Velocity** (modern, lightweight) and **BungeeCord** (widely used).  
+
+---
+
+## Steps to Set Up a Proxy  
+
+### Step 1: Navigate to the Proxy Tab  
+1. Log in to the [XGamingServer Control Panel](https://panel.xgamingserver.com).  
+2. Select your server from the server list.  
+3. Go to the **Proxy** tab in the server dashboard.  
+
+### Step 2: Add a New Proxy  
+1. Click **Add** to create a new proxy.  
+2. Fill out the required details:  
+   - **PROXY DOMAIN**: Enter a domain (e.g., `proxy.example.com`).  
+   - **ALLOCATION**: Select an IP and port for the proxy.  
+   - **ENABLE SSL**: Toggle SSL for secure connections.  
+   - **USE LET'S ENCRYPT**: Enable Let’s Encrypt for automatic SSL certificates.  
+
+3. Save the configuration.  
+
+---
+
+### Step 3: Connect Servers to the Proxy  
+
+1. Open the proxy configuration file (e.g., `velocity.toml`) via the **File Manager**.  
+2. Add the IPs and ports of your connected servers:  
+
+   ```toml
+   [[servers]]
+   name = "lobby"
+   address = "lobby-server-ip:25565"
+
+   [[servers]]
+   name = "survival"
+   address = "survival-server-ip:25566"
+   ```
+
+3. Restart the proxy to apply changes.  
+
+---
+
+### Step 4: Test the Proxy  
+
+1. Join the proxy using its domain or IP (e.g., `proxy.example.com`).  
+2. Verify that players can connect to all linked servers.  
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Proxy Not Routing Players Correctly  
+- **Cause**: Incorrect server IPs or ports in the proxy configuration.  
+- **Solution**:  
+  1. Verify the IPs and ports in the proxy config file.  
+  2. Restart the proxy and connected servers.  
+
+### Issue: SSL Certificate Errors  
+- **Cause**: Misconfigured SSL settings or invalid domain.  
+- **Solution**:  
+  1. Ensure the domain is valid and points to the correct IP.  
+  2. Disable and re-enable SSL if necessary.  
+
+---
+
+## Best Practices  
+
+- Use a dedicated proxy server for optimal performance.  
+- Regularly monitor logs for errors or unusual activity.  
+- Secure connections with SSL encryption.  
+
+---
+
+Need further assistance? Contact our support team Via the panel

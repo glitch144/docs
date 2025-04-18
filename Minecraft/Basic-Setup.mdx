@@ -1,0 +1,128 @@
+---
+title: "Basic Configuration for Minecraft Servers"
+---
+
+This guide walks you through the essential steps to configure your Minecraft server on XGamingServer using the Pterodactyl Panel. By the end of this guide, your server will be ready for gameplay with optimized settings.
+
+<info>
+  This guide assumes you’ve already created a Minecraft server instance. If not, refer to our [Server Setup Guide](/guides/server-setup).
+</info>
+
+---
+
+## Step 1: Access Your Server
+
+1. Log in to the [XGamingServer Control Panel](https://panel.xgamingserver.com).
+2. Select your Minecraft server from the server list.
+
+---
+
+## Step 2: Choose a Server Type
+
+1. Navigate to the **Server Type** tab.
+2. Select a server type based on your needs:
+   - **Paper**: Lightweight and optimized for performance (ideal for vanilla or semi-vanilla servers).
+   - **Forge**: Required for modded servers (e.g., custom mods).
+   - **Fabric**: Modern mod loader for advanced mod compatibility.
+   - **Spigot**: Stable and widely used for plugins.
+
+   <tip>
+     For modded servers, ensure you’ve allocated enough RAM (8GB\+).
+   </tip>
+
+---
+
+## Step 3: Allocate Resources
+
+1. Go to the **Settings** tab.
+2. Adjust resource allocations:
+
+   ```text
+   CPU: 1–2 cores for vanilla, 2–4 cores for modded.  
+   RAM: 4GB for vanilla, 8GB+ for modded.  
+   Disk Space: 5–10GB for vanilla, 20GB+ for modded.  
+   ```
+
+   <warning>
+     Under-allocating resources can lead to crashes or poor performance.
+   </warning>
+
+---
+
+## Step 4: Configure `server.properties`
+
+1. Navigate to the **File Manager** tab.
+2. Locate and edit the `server.properties` file.
+3. Update key settings:
+
+   ```properties
+   # Basic Settings
+   gamemode=survival          # Options: survival, creative, adventure
+   difficulty=easy            # Options: peaceful, easy, normal, hard
+   level-name=world           # Name of your world folder
+   online-mode=true           # Enable Mojang authentication (set to "false" for cracked servers)
+   
+   # Multiplayer Settings
+   max-players=20             # Maximum players allowed
+   view-distance=8            # Render distance (lower for better performance)
+   ```
+4. Save the file and restart the server.
+
+---
+
+## Step 5: Set Up Permissions (Optional)
+
+1. Install a permissions plugin like **LuckPerms** via the **Plugins Tab**.
+2. Configure permissions using commands or the plugin’s config file.
+
+   ```text
+   Example Commands:  
+   /lp creategroup admin  
+   /lp group admin permission set * true  
+   ```
+
+---
+
+## Step 6: Enable Backups
+
+1. Navigate to the **Backups** tab.
+2. Schedule automatic backups (e.g., daily at 2 AM).
+3. Download a backup to test restoration.
+
+   <tip>
+     Regular backups are crucial for recovering from crashes or data loss.
+   </tip>
+
+---
+
+## Step 8: Secure Your Server
+
+1. Enable **2FA** for your XGamingServer account.
+2. Install anti-cheat plugins like **NoCheatPlus** (via the **Plugins Tab**).
+
+---
+
+## Step 9: Test Your Server
+
+1. Start the server and wait for it to load.
+2. Join using your Minecraft client:
+   - **Direct Connect**: `your-server-ip:port`
+   - **Domain**: If you’ve set up a custom domain (e.g., `play.example.com`).
+
+---
+
+## Step 10: Invite Players
+
+1. Share your server IP or domain with friends.
+2. For public servers, list it on platforms like [Minecraft Server List](https://minecraft-server-list.com).
+
+---
+
+## Final Checklist
+
+✅ Server type selected and resources allocated.\
+✅ `server.properties` configured.\
+✅ Ports opened and backups enabled.\
+✅ Security measures (2FA, anti-cheat) applied.
+
+---

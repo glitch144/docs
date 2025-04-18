@@ -1,0 +1,141 @@
+# Adding Additional Server Ports
+
+This comprehensive guide explains how to add and configure additional server ports for your game server on **XGamingServer** using the **Pterodactyl Panel**. Properly configuring ports is essential for ensuring smooth communication between your server and clients, especially when running custom mods, plugins, or services like voice chat.
+
+---
+
+## Overview
+
+The **Additional Server Ports** feature allows you to:  
+- Open specific ports for your game server (e.g., game traffic, RCON, or voice chat).  
+- Ensure compatibility with mods/plugins requiring custom port configurations.  
+- Avoid conflicts with other services or servers on the same node.  
+
+Ports are crucial for allowing incoming and outgoing connections. By default, Pterodactyl assigns a primary port for your server, but you may need to open additional ports for advanced setups.
+
+<Callout type="info">
+Ports are like "doors" that allow external users to connect to your server. Each service (e.g., Minecraft, Teamspeak, etc.) requires specific ports to function correctly.
+</Callout>
+
+---
+
+## Getting Started
+
+### Step 1: Log in to Pterodactyl Panel  
+Navigate to [XGamingServer's Pterodactyl Panel](https://your-ptero-domain.com) and log in with your credentials. If you’re unsure about your login details, check your email for the welcome message or contact support.
+
+### Step 2: Select Your Server  
+Once logged in, locate your game server in the server list. Click on the server name to access its management dashboard.
+
+### Step 3: Configure Ports  
+1. **Locate Port Settings**:  
+   In the server dashboard, navigate to the **Settings** tab and find the **Ports** section. This section lists all currently assigned ports for your server.
+
+2. **Add a New Port**:  
+   Click **Add Port** and specify the following details:  
+   - **Port Number**: The port you want to open (e.g., `25565` for Minecraft, `9987` for Teamspeak).  
+   - **Protocol**: Choose `TCP`, `UDP`, or both. Most games use `UDP` for real-time communication, while some services (e.g., RCON, HTTP APIs) require `TCP`.  
+
+   ```text
+   Example Configuration:  
+   Port: 25566  
+   Protocol: TCP/UDP  
+   ```
+
+3. **Save Changes**:  
+   After entering the details, click **Save** to apply the configuration. Pterodactyl will automatically update the server’s firewall rules to allow traffic on the specified port.
+
+### Step 4: Update Server Configuration  
+If your game or application requires manual port configuration, follow these steps:  
+
+1. **Access File Manager**:  
+   In the Pterodactyl panel, go to the **File Manager** tab to browse your server files.  
+
+2. **Edit Configuration Files**:  
+   Locate the relevant configuration file for your game or application and update the port value. Below are examples for popular games:  
+
+   ```text
+   # Example: Minecraft server.properties
+   server-port=25566
+   rcon.port=25575
+   ```
+
+   ```text
+   # Example: Teamspeak ts3server.ini
+   default_voice_port=9988
+   ```
+
+3. **Save the File**:  
+   After making changes, save the file and exit the editor.
+
+### Step 5: Restart the Server  
+Restart your server for the changes to take effect. You can do this by clicking the **Restart** button in the Pterodactyl panel.
+
+---
+
+## Advanced Configurations
+
+### Adding Multiple Ports  
+If your server requires multiple ports (e.g., for different services), repeat **Step 3** for each port. For example:  
+- Game traffic: `25565` (TCP/UDP)  
+- Voice chat: `9987` (UDP)  
+- RCON: `25575` (TCP)  
+
+### Using Port Ranges  
+Some applications require a range of ports (e.g., for multiple players or services). To configure a port range:  
+1. Add the first port in the range (e.g., `10000`).  
+2. Add the last port in the range (e.g., `10100`).  
+3. Update your application’s configuration to use the range.  
+
+```text
+Example: Port Range for Minecraft BungeeCord
+server-port=10000-10100
+```
+
+---
+
+## Important Notes  
+
+- **Port Availability**: Ensure the port is not already in use by another service or server on the same node. Duplicate ports can cause connection issues.  
+- **Firewall Rules**: XGamingServer automatically configures node firewalls, but if you encounter issues, contact support for assistance.  
+- **Pterodactyl Variables**: Use environment variables like `SERVER_PORT` in startup commands if your application supports dynamic port assignment.  
+
+<Callout type="warning">  
+**Port Conflicts**: Do not reuse ports assigned to other servers on the same node. Always verify port availability before assigning.  
+</Callout>
+
+---
+
+## Troubleshooting  
+
+### Port Not Opening  
+If the port you added does not seem to work:  
+1. Verify the port is saved in Pterodactyl and matches your application’s configuration.  
+2. Check your game’s documentation for required protocols (`TCP` vs. `UDP`).  
+3. Test the port using an online port checker tool (e.g., [canyouseeme.org](https://canyouseeme.org)).  
+
+### Connection Issues  
+If clients cannot connect to your server:  
+1. Ensure your firewall/router allows traffic on the configured port.  
+2. Verify the port is open on the server’s hosting node.  
+3. Double-check your application’s configuration file for typos or incorrect values.  
+
+### Firewall Blockage  
+If you suspect a firewall issue:  
+1. Contact XGamingServer support to confirm the node’s firewall rules.  
+2. If you have a custom firewall setup, ensure the port is allowed.  
+
+---
+
+## More Information  
+
+For advanced configurations (e.g., port ranges, multiple ports), refer to our [Comprehensive Port Guide](/guides/advanced-port-config).  
+
+### Additional Resources  
+- [Pterodactyl Documentation](https://pterodactyl.io)  
+- [Minecraft Port Configuration](https://minecraft.fandom.com/wiki/Server.properties)  
+- [Teamspeak Port Setup](https://www.teamspeak.com/en/support/)  
+
+---
+
+Let us know if you need further assistance! 🚀

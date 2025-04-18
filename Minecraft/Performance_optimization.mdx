@@ -1,0 +1,116 @@
+---
+title: "New file"
+description: "Learn how to optimize your Minecraft server's performance using XGamingServer's control panel."
+---
+
+Optimizing your Minecraft server ensures smooth gameplay, reduces lag, and improves the overall player experience. This guide will walk you through key steps to optimize your server’s performance using XGamingServer’s control panel.
+
+<info>
+  This guide assumes you’ve already configured your server. If not, refer to our [Basic Configuration Guide](/guides/Basic-Setup).
+</info>
+
+---
+
+## Step 1: Allocate Resources Efficiently
+
+1. Go to the **Settings** tab in your XGamingServer control panel.
+2. Adjust resource allocations based on your server type:
+
+   ```text
+   Vanilla Servers:  
+   - CPU: 1–2 cores  
+   - RAM: 2–4GB  
+   - Disk Space: 5–10GB  
+   
+   Modded Servers:  
+   - CPU: 2–4 cores  
+   - RAM: 8–10GB+  
+   - Disk Space: 20GB+  
+   ```
+
+<tip>
+  Under-allocating resources can cause crashes, while over-allocating may waste resources. Balance based on player count and mod usage.
+</tip>
+
+---
+
+## Step 2: Use Lightweight Server Software
+
+1. Navigate to the **Server Type** tab.
+2. Switch to a lightweight server type if possible:
+   - **PaperMC**: Optimized for performance and widely compatible with plugins.
+   - **Purpur**: A fork of Paper with additional features and optimizations.
+3. Restart your server after switching.
+
+<warning>
+  Switching server types may require reinstalling plugins/mods. Always back up your server before making changes.
+</warning>
+
+---
+
+## Step 3: Optimize `server.properties`
+
+1. Go to the **File Manager** tab.
+2. Locate and edit the `server.properties` file.
+3. Update settings to improve performance:
+
+   ```properties
+   view-distance=6           # Lower render distance for better TPS.
+   max-tick-time=100         # Prevent long ticks from freezing the server.
+   entity-broadcast-range=512 # Reduce entity tracking range.
+   simulation-distance=4     # Limit block updates (for newer versions).
+   ```
+4. Save the file and restart your server.
+
+---
+
+## Step 4: Install Performance Plugins
+
+1. Use the **Plugins Tab** to install performance-enhancing plugins:
+   - **ClearLag**: Automatically removes lag-causing entities (e.g., dropped items, mobs).
+   - **Spark**: Analyze server performance and identify bottlenecks.
+   - **WorldBorder**: Limit world size to reduce memory usage.
+2. Configure plugins via their config files in the **File Manager**.
+
+   ```text
+   Example: ClearLag config.yml  
+   check-period: 15          # Check for lag every 15 seconds.  
+   auto-remove-mobs: true    # Automatically remove excess mobs.  
+   ```
+3. Restart your server to apply plugin changes.
+
+---
+
+## Step 5: Monitor Server Health
+
+1. Use tools like **Spark** to monitor server performance:
+   - Run `/spark` in-game to view real-time TPS (Ticks Per Second) and resource usage.
+   - Run `/spark profiler start` to analyze performance bottlenecks.
+2. Address identified issues:
+   - Remove resource-heavy mods/plugins.
+   - Adjust resource allocations or server settings.
+
+---
+
+## Step 6: Manage Mods and Plugins
+
+1. Identify resource-heavy mods/plugins:
+   - Use tools like **ModProfiler** (for Forge/Fabric) or **Timings** (for Spigot/Paper).
+2. Remove unnecessary or outdated mods/plugins.
+3. Keep essential mods/plugins updated to their latest versions.
+
+<info>
+  Outdated mods/plugins are often less optimized and may cause compatibility issues.
+</info>
+
+---
+
+## Step 7: Backup and Restart Regularly
+
+1. Schedule regular restarts to clear memory leaks:
+   - Use the **Schedules Tab** to automate restarts (e.g., daily at 2 AM).
+2. Ensure backups are enabled:
+   - Use the **Backups Tab** to schedule automatic backups.
+   - Store backups off-site (e.g., Google Drive, Dropbox).
+
+---

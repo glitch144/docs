@@ -1,0 +1,86 @@
+---
+title: "Creating and Using Databases for Minecraft Servers"
+description: "Learn how to create and use MySQL databases for plugins like LuckPerms, CoreProtect, and more."
+icon: "database"
+---
+
+# Creating and Using Databases for Minecraft Servers  
+
+Databases are essential for plugins like **LuckPerms**, **CoreProtect**, and **ShopGUI+**. This guide will walk you through creating and configuring databases using XGamingServer’s control panel.  
+
+<Callout type="info">  
+This guide assumes you’ve already configured your server. If not, refer to our [Basic Configuration Guide](/guides/minecraft-basic-config).  
+</Callout>  
+
+---
+
+## Overview  
+
+Databases allow plugins to store and retrieve data efficiently. For example:  
+- **LuckPerms**: Stores permissions and user groups.  
+- **CoreProtect**: Logs block changes and rollbacks.  
+
+---
+
+## Steps to Create a Database  
+
+### Step 1: Navigate to the Databases Tab  
+1. Log in to the [XGamingServer Control Panel](https://panel.xgamingserver.com).  
+2. Select your server from the server list.  
+3. Go to the **Databases** tab in the server dashboard.  
+
+### Step 2: Create a New Database  
+1. Click **Create Database** and provide the following:  
+   - **Database Name**: e.g., `luckperms`.  
+   - **Database User**: e.g., `lpuser`.  
+   - **Password**: Generate a strong password.  
+
+2. Save the database details.  
+
+---
+
+### Step 3: Configure Plugins to Use the Database  
+
+1. Open the plugin’s configuration file via the **File Manager** (e.g., `config.yml` for LuckPerms).  
+2. Update the database settings:  
+
+   ```yaml
+   # Example: LuckPerms config.yml
+   database:
+     type: mysql
+     host: mysql.xgamingserver.com
+     port: 3306
+     database: luckperms
+     username: lpuser
+     password: ********
+   ```
+
+3. Restart the server to apply changes.  
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Database Connection Errors  
+- **Cause**: Invalid credentials or firewall restrictions.  
+- **Solution**:  
+  1. Double-check the database host, port, username, and password.  
+  2. Ensure the database server allows connections from your server’s IP.  
+
+### Issue: Plugin Crashes After Database Setup  
+- **Cause**: Missing dependencies or incorrect settings.  
+- **Solution**:  
+  1. Check the plugin’s documentation for required dependencies.  
+  2. Update or reinstall the plugin if necessary.  
+
+---
+
+## Best Practices  
+
+- Secure your database credentials and avoid hardcoding passwords in shared files.  
+- Regularly back up your database to prevent data loss.  
+- Monitor database usage to detect unusual activity.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Database Guide](/guides/using-databases). 🚀  

@@ -1,0 +1,116 @@
+---
+title: "New file"
+description: "Description of your new file."
+---
+
+Securing your Minecraft server and setting up regular backups are essential steps to protect your server from attacks, data loss, and downtime. This guide will walk you through best practices for securing your server and configuring automated backups.
+
+<info>
+  This guide assumes you’ve already configured your server. If not, refer to our [Basic Configuration Guide](/guides/Basic-Setup).
+</info>
+
+---
+
+## Part 1: Securing Your Server
+
+### Step 1: Enable Two-Factor Authentication (2FA)
+
+1. Log in to your XGamingServer control panel.
+2. Navigate to your account settings.
+3. Enable **2FA** using an app like Google Authenticator or Authy.
+4. Save your recovery codes in a secure location.
+
+<warning>
+  Never share your recovery codes. They can be used to bypass 2FA if your device is lost or stolen.
+</warning>
+
+---
+
+### Step 2: Secure Subuser Permissions
+
+1. Go to the **Subusers** tab in your server dashboard.
+2. Assign the **least privilege** necessary for each subuser:
+   - Moderators: Console Access, Start/Stop permissions.
+   - Developers: File Management, Backup Management.
+3. Require all subusers to enable 2FA on their accounts.
+
+<tip>
+  Regularly audit subusers and revoke access for inactive or unnecessary accounts.
+</tip>
+
+---
+
+### Step 3: Install Anti-Cheat Plugins
+
+1. Use the **Plugins Tab** to install anti-cheat plugins:
+   - **NoCheatPlus**: Detects and prevents cheating (e.g., fly hacks, speed hacks).
+   - **AntiCheatReloaded**: Modern anti-cheat solution for Spigot/Paper servers.
+2. Configure anti-cheat settings via the plugin’s config file in the **File Manager**.
+
+---
+
+### Step 4: Regularly Update Software
+
+1. Keep your server software (e.g., Paper, Forge) updated to the latest version.
+2. Update plugins/mods regularly to patch vulnerabilities.
+3. Monitor community forums or changelogs for security patches.
+
+---
+
+## Part 2: Setting Up Backups
+
+### Step 1: Create a Backup Schedule
+
+1. Click **Create Schedule** to automate backups:
+   - **Frequency**: Daily, weekly, or monthly.
+   - **Retention**: Set the number of backups to retain (e.g., 7 days).
+2. Save the schedule.
+
+<tip>
+  Schedule backups during off-peak hours to minimize performance impact.
+</tip>
+
+---
+
+### Step 2: Manually Create Backups
+
+1. Go to the **Backups** tab.
+2. Click **Create Backup** to manually generate a backup.
+3. Download the backup file locally as an additional safeguard.
+
+---
+
+### Step 3: Store Backups Off-Site
+
+1. Upload backups to cloud storage services like Google Drive, Dropbox, or AWS S3.
+2. Use third-party tools or scripts to automate off-site backup uploads.
+
+<warning>
+  Relying solely on local backups increases the risk of data loss during hardware failures.
+</warning>
+
+---
+
+### Step 4: Restore from a Backup
+
+1. Go to the **Backups** tab.
+2. Select the backup you want to restore.
+3. Click **Restore** to overwrite your current server files with the backup.
+
+<info>
+  Restoring a backup will replace your server files. Ensure you’ve backed up any recent changes before proceeding.
+</info>
+
+---
+
+## Best Practices
+
+- **Use Strong Passwords**: Ensure all accounts (panel, database, etc.) use strong, unique passwords.
+- **Enable Logging**: Regularly review logs for suspicious activity.
+- **Test Backups**: Periodically test restoring backups to ensure they work.
+
+---
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Security Guide](/guides/security-best-practices). 🚀

@@ -1,0 +1,137 @@
+---
+title: "New file"
+---
+
+# Installing Mods and Plugins
+
+Enhance your Minecraft server by installing mods and plugins that add new features, mechanics, and functionality. This guide explains how to use the **Plugins** and **Modpacks** tabs in your XGamingServer control panel to install and manage mods/plugins seamlessly.
+
+<info>
+  This guide assumes you’ve already configured your Minecraft server. If not, refer to our [Basic Configuration Guide](/Minecraft/Basic-Setup).
+</info>
+
+---
+
+## Overview
+
+- **Plugins**: Small additions that enhance server functionality (e.g., permissions, chat management).
+- **Mods**: Larger modifications that change gameplay mechanics or add new content.
+- **Modpacks**: Pre-configured collections of mods for specific gameplay experiences (e.g., FTB, SkyFactory).
+
+<tip>
+  Use the **Plugins Tab** for individual mods/plugins and the **Modpacks Tab** for pre-configured modpacks.
+</tip>
+
+---
+
+## Step 1: Access the Plugins/Modpacks Tabs
+
+1. Log in to the [XGamingServer Control Panel](https://panel.xgamingserver.com).
+2. Select your Minecraft server from the server list.
+3. Navigate to the **Plugins** or **Modpacks** tab based on your needs.
+
+---
+
+## Step 2: Install Individual Mods/Plugins
+
+### Using the Plugins Tab
+
+1. **Filter Mods/Plugins**:
+   - Use the **Provider** dropdown to select a source (e.g., Modrinth, CurseForge).
+   - Set the **Plugin Loader** (e.g., Paper, Forge, Fabric) and **Minecraft Version** to ensure compatibility.
+2. **Search for Mods/Plugins**:
+   - Enter keywords in the **Search Query** field (e.g., "LuckPerms", "WorldEdit").
+3. **Install the Mod/Plugin**:
+   - Click **Install** next to the desired mod/plugin.
+   - Wait for the installation process to complete.
+
+   <warning>
+     Always verify compatibility between mods/plugins and your server version. Incompatible mods may cause crashes.
+   </warning>
+4. **Configure the Mod/Plugin**:
+   - Go to the **File Manager** tab.
+   - Locate the mod/plugin’s configuration file (e.g., `config.yml` for LuckPerms).
+   - Edit settings as needed.
+
+   ```yaml
+   # Example: LuckPerms config.yml
+   default_group: member
+   ```
+5. Restart your server to apply changes.
+
+---
+
+## Step 3: Install Modpacks
+
+### Using the Modpacks Tab
+
+1. **Filter Modpacks**:
+   - Use the **Provider** dropdown to select a source (e.g., Modrinth, CurseForge).
+   - Enter keywords in the **Search Query** field (e.g., "SkyFactory 4", "FTB Infinity").
+2. **Install the Modpack**:
+   - Click **Install** next to the desired modpack.
+   - Wait for the installation process to complete.
+
+   <info>
+     Modpacks include all required dependencies, so no additional setup is usually needed.
+   </info>
+3. **Verify Configuration**:
+   - Check the modpack’s documentation for any required settings.
+   - Adjust configurations via the **File Manager** if necessary.
+4. Restart your server to apply changes.
+
+---
+
+## Step 4: Manage Installed Mods/Plugins
+
+1. **View Installed Items**:
+   - Use the **Installed Plugins** button in the **Plugins** or **Modpacks** tab to view all installed mods/plugins.
+2. **Update Mods/Plugins**:
+   - Check for updates next to each installed item.
+   - Click **Update** to install the latest version.
+3. **Remove Mods/Plugins**:
+   - Find the mod/plugin you want to remove.
+   - Click **Uninstall** to remove it from your server.
+
+   <warning>
+     Removing a mod/plugin may delete its associated files and configurations. Backup your server before proceeding.
+   </warning>
+
+---
+
+## Troubleshooting Common Issues
+
+### Issue: Mods/Plugins Not Working After Installation
+
+- **Cause**: Missing dependencies or incorrect configuration.
+- **Solution**:
+  1. Check the mod/plugin documentation for required dependencies.
+  2. Verify configuration files are set up correctly.
+
+### Issue: Server Crashes After Installing Mods/Plugins
+
+- **Cause**: Incompatible or corrupted mods/plugins.
+- **Solution**:
+  1. Uninstall the problematic mod/plugin immediately.
+  2. Restore your server from a backup if necessary.
+
+### Issue: Conflicts Between Mods/Plugins
+
+- **Cause**: Overlapping functionality or incompatible versions.
+- **Solution**:
+  1. Test mods/plugins individually to identify the culprit.
+  2. Update or replace conflicting mods/plugins.
+
+---
+
+## Best Practices
+
+- **Backup Regularly**: Always back up your server before installing or updating mods/plugins.
+- **Test Changes**: Test new mods/plugins on a staging server before applying them to production.
+- **Monitor Logs**: Check server logs for errors after installing mods/plugins.
+
+---
+
+## 
+
+---
