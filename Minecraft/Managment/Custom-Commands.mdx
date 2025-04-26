@@ -1,0 +1,79 @@
+---
+title: "Setting Up Custom Commands for Your Minecraft Server"
+description: "Learn how to create and use custom commands to enhance your Minecraft server's functionality."
+icon: "terminal"
+---
+
+# Setting Up Custom Commands for Your Minecraft Server  
+
+Custom commands allow you to automate tasks, manage players, and enhance gameplay. This guide will show you how to set up and use custom commands using plugins like **EssentialsX** or **CommandHelper**.  
+
+<Callout type="info">  
+This guide assumes you’ve already installed plugins. If not, refer to our [Installing Mods and Plugins Guide](/guides/installing-mods-plugins).  
+</Callout>  
+
+---
+
+## Overview  
+
+Custom commands can be used to:  
+- Teleport players.  
+- Manage permissions.  
+- Broadcast messages.  
+- Automate repetitive tasks.  
+
+---
+
+## Steps to Set Up Custom Commands  
+
+### Step 1: Install a Command Plugin  
+1. Use the **Plugins Tab** to install a plugin like **EssentialsX**.  
+2. Restart the server to load the plugin.  
+
+### Step 2: Configure Commands  
+1. Open the plugin’s configuration file via the **File Manager** (e.g., `config.yml` for EssentialsX).  
+2. Define custom commands. For example:  
+
+   ```yaml
+   # Example: EssentialsX config.yml
+   aliases:
+     home: /essentials:home
+     tp: /essentials:tp
+   ```
+
+3. Save the file and restart the server.  
+
+### Step 3: Use Commands In-Game  
+- Use the custom commands in-game:  
+  ```text
+  /home
+  /tp PlayerName
+  ```
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Command Not Working  
+- **Cause**: Incorrect syntax or missing permissions.  
+- **Solution**:  
+  1. Verify the command syntax in the plugin’s documentation.  
+  2. Assign permissions using a plugin like **LuckPerms**.  
+
+### Issue: Plugin Conflicts  
+- **Cause**: Overlapping commands from multiple plugins.  
+- **Solution**:  
+  1. Rename conflicting commands in the plugin’s config file.  
+  2. Use `/help` to identify which plugin owns a command.  
+
+---
+
+## Best Practices  
+
+- Use aliases to simplify complex commands.  
+- Document custom commands for players to reference.  
+- Regularly update plugins to ensure compatibility.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Custom Commands Guide](/guides/custom-commands). 🚀  

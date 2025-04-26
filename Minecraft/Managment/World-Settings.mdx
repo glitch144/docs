@@ -1,0 +1,82 @@
+---
+title: "Configuring World Settings for Your Minecraft Server"
+description: "Learn how to customize world settings like spawn points, weather, and time cycles."
+icon: "globe"
+---
+
+# Configuring World Settings for Your Minecraft Server  
+
+World settings allow you to customize the environment of your Minecraft server, including spawn points, weather, and time cycles. This guide will show you how to configure these settings using XGamingServer’s control panel.  
+
+<Callout type="info">  
+This guide assumes you’ve already created a world. If not, refer to our [Basic Configuration Guide](/guides/minecraft-basic-config).  
+</Callout>  
+
+---
+
+## Overview  
+
+Key world settings include:  
+- Spawn protection.  
+- Weather and time cycles.  
+- Game rules like mob spawning and daylight cycle.  
+
+---
+
+## Steps to Configure World Settings  
+
+### Step 1: Access `server.properties`  
+1. Log in to the [XGamingServer Control Panel](https://panel.xgamingserver.com).  
+2. Select your server from the server list.  
+3. Go to the **File Manager** tab and locate the `server.properties` file.  
+
+### Step 2: Edit World Settings  
+Below are some common settings you can customize:  
+
+#### Spawn Protection  
+Protect the spawn area from griefing:  
+```properties
+spawn-protection=16
+```
+
+#### Daylight Cycle  
+Enable or disable the day-night cycle:  
+```properties
+do-daylight-cycle=true
+```
+
+#### Weather  
+Disable weather effects:  
+```properties
+do-weather-cycle=false
+```
+
+#### Mob Spawning  
+Control mob spawning:  
+```properties
+spawn-monsters=true
+```
+
+### Step 3: Save and Restart  
+1. Save the changes to `server.properties`.  
+2. Restart your server to apply the new settings.  
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Spawn Area Not Protected  
+- **Cause**: `spawn-protection` value is too low or disabled.  
+- **Solution**: Increase the `spawn-protection` radius in `server.properties`.  
+
+### Issue: Weather Effects Persist  
+- **Cause**: `do-weather-cycle` is enabled.  
+- **Solution**: Set `do-weather-cycle=false` to disable weather.  
+
+---
+
+## Best Practices  
+
+- Use spawn protection to safeguard new players.  
+- Disable weather and time cycles for roleplay servers.  
+- Regularly test world settings to ensure they align with your server’s theme.  
