@@ -1,0 +1,89 @@
+---
+title: "Setting Up a Custom MOTD for Your Minecraft Server"
+description: "Learn how to create and customize a Message of the Day (MOTD) for your Minecraft server."
+icon: "comment-alt"
+---
+
+The **Message of the Day (MOTD)** is the text displayed in the server list when players hover over your server. A well-crafted MOTD can make your server stand out and provide essential information to potential players.
+
+<info>
+  This guide assumes you’ve already configured your server. If not, refer to our [Basic Configuration Guide](/Minecraft/Basic-Setup).
+</info>
+
+---
+
+## Overview
+
+The MOTD is defined in the `server.properties` file under the `motd` field. You can use plain text or add color codes and formatting for a more visually appealing message.
+
+---
+
+## Steps to Customize Your MOTD
+
+### Step 1: Access `server.properties`
+
+1. Log in to the [XGamingServer Control Panel](https://panel.xgamingserver.com).
+2. Select your server from the server list.
+3. Go to the **File Manager** tab and locate the `server.properties` file.
+
+### Step 2: Edit the `motd` Field
+
+1. Open the `server.properties` file for editing.
+2. Locate the `motd` field. By default, it may look like this:
+
+   ```properties
+   motd=A Minecraft Server
+   ```
+3. Replace the text with your custom message. For example:
+
+   ```properties
+   motd=Welcome to My Awesome Server! Join us for epic adventures!
+   ```
+4. To add colors and formatting, use Minecraft’s **color codes**. For example:
+
+   ```properties
+   motd=§6Welcome §bto §aMy §cAwesome §eServer! §rJoin us for epic adventures!
+   ```
+   - `§6`: Gold
+   - `§b`: Aqua
+   - `§a`: Green
+   - `§c`: Red
+   - `§e`: Yellow
+   - `§r`: Reset formatting
+
+<tip>
+  You can use tools like [Minecraft JSON Text Generator](https://minecraft.tools/en/json_text.php) to design complex MOTDs with colors and formatting.
+</tip>
+
+### Step 3: Save and Restart
+
+1. Save the changes to `server.properties`.
+2. Restart your server to apply the new MOTD.
+
+---
+
+## Troubleshooting Common Issues
+
+### Issue: MOTD Not Updating
+
+- **Cause**: Changes were not saved or the server was not restarted.
+- **Solution**:
+  1. Double-check the `server.properties` file for typos.
+  2. Restart the server to apply changes.
+
+### Issue: Colors Not Displaying Correctly
+
+- **Cause**: Incorrect or unsupported color codes.
+- **Solution**:
+  1. Verify that the color codes are valid (e.g., `§6` for gold).
+  2. Avoid using unsupported characters or formatting.
+
+---
+
+## Best Practices
+
+- Keep the MOTD concise but informative.
+- Use colors sparingly to avoid overwhelming players.
+- Include key details like server rules, features, or website links.
+
+---
