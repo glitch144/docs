@@ -1,0 +1,75 @@
+---
+title: "Installing and Using Resource Packs for Your Minecraft Server"
+description: "Learn how to install and configure resource packs to enhance your Minecraft server's visuals and gameplay."
+icon: "palette"
+---
+
+# Installing and Using Resource Packs for Your Minecraft Server  
+
+Resource packs allow you to customize the textures, sounds, and visuals of your Minecraft server. This guide will walk you through installing and configuring resource packs using XGamingServer’s control panel.  
+
+<Callout type="info">  
+This guide assumes you’ve already configured your server. If not, refer to our [Basic Configuration Guide](/guides/minecraft-basic-config).  
+</Callout>  
+
+---
+
+## Overview  
+
+Resource packs are `.zip` files containing textures, sounds, and other assets. They can be applied globally (forced on all players) or optionally (players choose to enable them).  
+
+---
+
+## Steps to Install a Resource Pack  
+
+### Step 1: Download a Resource Pack  
+1. Find a resource pack on platforms like [CurseForge](https://www.curseforge.com) or [Planet Minecraft](https://www.planetminecraft.com).  
+2. Download the `.zip` file for the resource pack.  
+
+### Step 2: Upload the Resource Pack  
+1. Log in to the [XGamingServer Control Panel](https://panel.xgamingserver.com).  
+2. Select your server from the server list.  
+3. Go to the **File Manager** tab.  
+4. Navigate to the `resourcepacks` folder (create it if it doesn’t exist).  
+5. Upload the `.zip` file to the `resourcepacks` folder.  
+
+### Step 3: Configure `server.properties`  
+1. Open the `server.properties` file via the **File Manager**.  
+2. Locate the `resource-pack` field and set it to the URL of your resource pack. For example:  
+
+   ```properties
+   resource-pack=https://example.com/resourcepack.zip
+   ```
+
+3. Optionally, enable `resource-pack-required=true` to force players to use the pack.  
+
+### Step 4: Restart the Server  
+1. Restart your server to apply the changes.  
+2. Test the resource pack by joining the server.  
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Resource Pack Not Loading  
+- **Cause**: Incorrect URL or corrupted file.  
+- **Solution**:  
+  1. Verify the URL is correct and accessible.  
+  2. Re-upload the `.zip` file if necessary.  
+
+### Issue: Players Cannot Connect  
+- **Cause**: Forced resource packs may block players who decline them.  
+- **Solution**:  
+  1. Set `resource-pack-required=false` to make the pack optional.  
+
+---
+
+## Best Practices  
+
+- Test resource packs on a staging server before deploying them to production.  
+- Inform players about the resource pack in your MOTD or Discord.  
+- Regularly update resource packs to match Minecraft versions.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Resource Pack Guide](/guides/resource-packs). 🚀  
