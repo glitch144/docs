@@ -1,0 +1,110 @@
+---
+title: "Persistence and Save Systems in Arma Reforger"
+description: "Learn how to implement persistence and save systems to store player progress and world states."
+icon: "save"
+---
+
+# Persistence and Save Systems in Arma Reforger  
+
+Persistence allows you to save player progress, world states, and other data between sessions. This guide will show you how to implement save systems using Enforce Script.
+
+<Callout type="info">  
+This guide assumes you’re familiar with scripting. If not, refer to our [Introduction to Scripting Guide](/scripting/introduction-to-scripting).  
+</Callout>  
+
+---
+
+## Overview  
+
+Persistence is essential for creating immersive experiences where player actions have long-term effects. You can use Enforce Script to save and load data such as:  
+- Player stats (e.g., health, score).  
+- World states (e.g., destroyed buildings, captured zones).  
+
+---
+
+## Steps to Implement Persistence  
+
+### Step 1: Save Player Data  
+Use the `saveData()` function to store player information:  
+
+```javascript
+// Save player progress
+onPlayerLeave(player => {
+    let playerName = player.getName();
+    let playerStats = {
+        health: player.getHealth(),
+        score: player.getScore(),
+        inventory: player.getInventory()
+    };
+    saveData(playerName, playerStats);
+    log(`Progress saved for ${playerName}`);
+});
+```
+
+### Step 2: Load Player Data  
+Use the `loadData()` function to restore player information:  
+
+```javascript
+// Load player progress
+onPlayerJoin(player => {
+    let playerName = player.getName();
+    let playerStats = loadData(playerName);
+    if (playerStats) {
+        player.setHealth(playerStats.health);
+        player.setScore(playerStats.score);
+        player.setInventory(playerStats.inventory);
+        log(`Progress loaded for ${playerName}`);
+    }
+});
+```
+
+---
+
+## Saving World States  
+
+### Example: Save Captured Zones  
+```javascript
+// Save captured zones
+onGameSave(() => {
+    let capturedZones = getCapturedZones(); // Assume this function exists
+    saveData("capturedZones", capturedZones);
+    log("World state saved: Captured zones");
+});
+
+// Load captured zones
+onGameLoad(() => {
+    let capturedZones = loadData("capturedZones");
+    if (capturedZones) {
+        restoreCapturedZones(capturedZones); // Assume this function exists
+        log("World state loaded: Captured zones");
+    }
+});
+```
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Data Not Saving  
+- **Cause**: Missing `saveData()` calls or incorrect keys.  
+- **Solution**:  
+  1. Verify that `saveData()` is called with unique keys.  
+  2. Check the server logs for errors during saving.  
+
+### Issue: Data Corruption  
+- **Cause**: Improper data formatting or incomplete saves.  
+- **Solution**:  
+  1. Use JSON-compatible formats for saved data.  
+  2. Validate data before saving or loading.  
+
+---
+
+## Best Practices  
+
+- Use descriptive keys for saved data (e.g., `player-stats`, `world-state`).  
+- Regularly back up saved data to prevent loss.  
+- Test persistence systems thoroughly before deploying them to production.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Persistence Guide](/scripting/persistence-and-save-systems). 🚀  
