@@ -1,0 +1,97 @@
+---
+title: "Optimizing Performance in Arma Reforger"
+description: "Learn how to optimize your Arma Reforger server's performance for smoother gameplay and reduced lag."
+icon: "tachometer-alt"
+---
+
+# Optimizing Performance in Arma Reforger  
+
+Performance optimization ensures smooth gameplay and minimizes lag. This guide covers techniques to improve server performance through resource allocation, mod management, and debugging.
+
+<Callout type="info">  
+This guide assumes you’ve already set up your server. If not, refer to our [Basic Setup Guide](/getting-started/basic-setup).  
+</Callout>  
+
+---
+
+## Overview  
+
+Common performance issues include high latency, low frame rates, and server crashes. Optimization involves:  
+- Allocating resources effectively.  
+- Managing mods and assets.  
+- Monitoring server logs for bottlenecks.  
+
+---
+
+## Steps to Optimize Performance  
+
+### Step 1: Allocate Resources  
+Adjust CPU, RAM, and bandwidth settings in your hosting panel:  
+
+```table
+| Resource     | Recommended Allocation       |
+|--------------|------------------------------|
+| CPU          | 2-4 cores                    |
+| RAM          | 8-16 GB                      |
+| Bandwidth    | 100 Mbps or higher           |
+```
+
+---
+
+### Step 2: Manage Mods  
+1. Limit the number of active mods to reduce overhead.  
+2. Prioritize lightweight mods over resource-heavy ones.  
+
+---
+
+### Step 3: Monitor Logs  
+Use logs to identify performance bottlenecks:  
+```bash
+# Example: Analyze logs for errors
+tail -n 100 server.log | grep "error"
+```
+
+---
+
+## Advanced Techniques  
+
+### Technique 1: Reduce View Distance  
+Lower the view distance to improve performance:  
+```properties
+view-distance=1500
+```
+
+### Technique 2: Optimize AI Behavior  
+Reduce the number of AI units or simplify their behaviors:  
+```javascript
+// Reduce AI patrol frequency
+setPatrolFrequency(enemyGroup, 60); // Patrol every 60 seconds
+```
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: High Latency  
+- **Cause**: Insufficient bandwidth or overloaded server.  
+- **Solution**:  
+  1. Upgrade your hosting plan or use a dedicated provider.  
+  2. Limit the number of players during peak hours.  
+
+### Issue: Low Frame Rates  
+- **Cause**: Too many entities or complex scripts.  
+- **Solution**:  
+  1. Reduce the number of active entities.  
+  2. Optimize scripts for efficiency.  
+
+---
+
+## Best Practices  
+
+- Regularly monitor server performance metrics.  
+- Test changes in a staging environment before deploying them.  
+- Keep mods and assets updated to ensure compatibility.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Performance Optimization Guide](/server-management/performance-optimization). 🚀  

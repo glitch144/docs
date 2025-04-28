@@ -1,0 +1,90 @@
+---
+title: "Configuring Realism Settings in Arma Reforger"
+description: "Learn how to adjust realism settings like ballistics, damage models, and AI behavior to create an immersive experience."
+icon: "balance-scale"
+---
+
+# Configuring Realism Settings in Arma Reforger  
+
+Realism settings enhance immersion by simulating real-world mechanics. This guide will show you how to adjust settings like ballistics, damage models, and AI behavior to create a more authentic experience.
+
+<Callout type="info">  
+This guide assumes you’re familiar with server configuration. If not, refer to our [Basic Setup Guide](/getting-started/basic-setup).  
+</Callout>  
+
+---
+
+## Overview  
+
+Key realism settings include:  
+- Ballistics: Bullet drop, wind effects, and ricochets.  
+- Damage Models: Realistic injury and vehicle damage.  
+- AI Behavior: Intelligent enemy tactics and reactions.  
+
+---
+
+## Steps to Configure Realism Settings  
+
+### Step 1: Adjust Ballistics  
+Enable realistic ballistics in the `server.cfg` file:  
+```properties
+# Enable realistic ballistics
+realistic-ballistics=true
+```
+
+---
+
+### Step 2: Customize Damage Models  
+Adjust damage settings for players and vehicles:  
+```properties
+# Example: Increase vehicle damage realism
+vehicle-damage=realistic
+player-damage=realistic
+```
+
+---
+
+### Step 3: Enhance AI Behavior  
+Use Enforce Script to customize AI tactics:  
+```javascript
+// Example: Add flanking behavior to AI
+setAICombatBehavior(enemyGroup, "flank");
+```
+
+---
+
+## Examples of Realism Settings  
+
+| Setting           | Description                                      | Example Value               |
+|-------------------|--------------------------------------------------|----------------------------|
+| Ballistics        | Simulate bullet drop and wind effects.          | `realistic-ballistics=true` |
+| Damage Models     | Realistic injury and vehicle damage.            | `vehicle-damage=realistic`  |
+| AI Behavior       | Intelligent enemy tactics and reactions.        | `ai-tactics=advanced`       |
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Unrealistic Behavior  
+- **Cause**: Incorrect realism settings or outdated mods.  
+- **Solution**:  
+  1. Double-check realism settings in `server.cfg`.  
+  2. Update mods to ensure compatibility with realism features.  
+
+### Issue: Performance Impact  
+- **Cause**: High realism settings increase resource usage.  
+- **Solution**:  
+  1. Optimize settings for performance (e.g., reduce AI complexity).  
+  2. Upgrade hosting resources if necessary.  
+
+---
+
+## Best Practices  
+
+- Gradually introduce realism settings to avoid overwhelming players.  
+- Test realism settings thoroughly before deploying them to production.  
+- Gather player feedback to refine realism features.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Realism Settings Guide](/advanced-features/realism-settings). 🚀  

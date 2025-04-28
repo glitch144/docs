@@ -1,0 +1,105 @@
+---
+title: "Advanced Mission Design in Arma Reforger"
+description: "Learn advanced techniques for designing immersive and dynamic missions in Arma Reforger."
+icon: "map-signs"
+---
+
+# Advanced Mission Design in Arma Reforger  
+
+Once you’ve mastered the basics of mission creation, you can explore advanced techniques to make your missions more immersive and dynamic. This guide covers scripting, AI customization, and environmental effects.
+
+<Callout type="info">  
+This guide assumes you’re familiar with basic mission creation. If not, refer to our [Mission Creation Basics Guide](/missions/mission-creation-basics).  
+</Callout>  
+
+---
+
+## Overview  
+
+Advanced mission design involves:  
+- Scripting dynamic events (e.g., respawning enemies).  
+- Customizing AI behavior for realistic combat scenarios.  
+- Adding environmental effects like weather changes or time progression.  
+
+---
+
+## Steps to Design an Advanced Mission  
+
+### Step 1: Add Dynamic Events  
+Use Enforce Script to create dynamic events:  
+
+```javascript
+// Respawn enemies when all are eliminated
+onAllEnemiesKilled(() => {
+    let spawnLocation = getEnemySpawnPoint(); // Assume this function exists
+    spawnEnemies(spawnLocation, 5); // Spawn 5 new enemies
+    log("New wave of enemies spawned!");
+});
+```
+
+### Step 2: Customize AI Behavior  
+Adjust AI settings to make enemies more challenging:  
+- Increase patrol areas.  
+- Add scripted behaviors like flanking or retreating.  
+
+```javascript
+// Customize AI patrol routes
+let patrolRoute = ["PointA", "PointB", "PointC"];
+setPatrolRoute(enemyGroup, patrolRoute);
+log("AI patrol route updated.");
+```
+
+---
+
+### Step 3: Add Environmental Effects  
+Enhance immersion with dynamic weather and time progression:  
+
+```javascript
+// Change weather and time dynamically
+onGameTick(() => {
+    let currentTime = getTimeOfDay();
+    if (currentTime > 18 || currentTime < 6) {
+        setWeather("Rain");
+    } else {
+        setWeather("Clear");
+    }
+});
+```
+
+---
+
+## Examples of Advanced Missions  
+
+### Example 1: Base Defense  
+Players must defend a base from waves of enemies while managing resources like ammunition and health packs.  
+
+### Example 2: Capture and Hold  
+Players capture key locations and hold them against enemy counterattacks.  
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: AI Behaving Unpredictably  
+- **Cause**: Overlapping scripts or incorrect patrol routes.  
+- **Solution**:  
+  1. Simplify AI scripts to avoid conflicts.  
+  2. Test patrol routes step-by-step.  
+
+### Issue: Performance Drops  
+- **Cause**: Too many entities or complex scripts.  
+- **Solution**:  
+  1. Reduce the number of active entities.  
+  2. Optimize scripts for efficiency.  
+
+---
+
+## Best Practices  
+
+- Use modular scripts to manage complexity.  
+- Test missions in small environments before scaling up.  
+- Gather feedback from players to refine mission design.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Advanced Mission Design Guide](/missions/advanced-mission-design). 🚀  

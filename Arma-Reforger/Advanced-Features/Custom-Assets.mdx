@@ -1,0 +1,95 @@
+---
+title: "Using Custom Assets in Arma Reforger"
+description: "Learn how to import and use custom assets like textures, models, and sounds to enhance your Arma Reforger server."
+icon: "paint-brush"
+---
+
+# Using Custom Assets in Arma Reforger  
+
+Custom assets allow you to personalize your Arma Reforger server by adding unique textures, models, and sounds. This guide will walk you through importing and using custom assets effectively.
+
+<Callout type="info">  
+This guide assumes you’re familiar with basic mission creation. If not, refer to our [Mission Creation Basics Guide](/missions/mission-creation-basics).  
+</Callout>  
+
+---
+
+## Overview  
+
+Custom assets can include:  
+- **Textures**: Custom skins for vehicles or characters.  
+- **Models**: Unique objects or structures.  
+- **Sounds**: Custom audio effects or music.  
+
+---
+
+## Steps to Use Custom Assets  
+
+### Step 1: Prepare Your Assets  
+1. Create or download assets from platforms like [Steam Workshop](https://steamcommunity.com/workshop/).  
+2. Ensure assets are in compatible formats (e.g., `.p3d` for models, `.ogg` for sounds).  
+
+---
+
+### Step 2: Import Assets  
+1. Place assets in the appropriate directory (e.g., `Assets/Textures`).  
+2. Reference assets in your mission or script:  
+   ```javascript
+   // Example: Load a custom texture
+   let customTexture = loadTexture("Assets/Textures/CustomSkin.paa");
+   applyTexture(vehicle, customTexture);
+   ```
+
+---
+
+### Step 3: Test Assets  
+1. Launch the mission to verify that assets load correctly.  
+2. Check for errors in the console or logs if assets fail to load.  
+
+---
+
+## Examples of Custom Assets  
+
+### Example 1: Custom Vehicle Skin  
+```javascript
+// Apply a custom skin to a vehicle
+let vehicle = spawnVehicle("Truck", spawnLocation);
+let customSkin = loadTexture("Assets/Textures/CustomTruckSkin.paa");
+applyTexture(vehicle, customSkin);
+```
+
+### Example 2: Custom Sound Effect  
+```javascript
+// Play a custom sound when an event occurs
+onEventTrigger(() => {
+    playSound("Assets/Sounds/CustomExplosion.ogg");
+});
+```
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Assets Not Loading  
+- **Cause**: Incorrect file paths or incompatible formats.  
+- **Solution**:  
+  1. Verify file paths and ensure they match references in scripts.  
+  2. Convert assets to supported formats if necessary.  
+
+### Issue: Performance Drops  
+- **Cause**: High-resolution textures or complex models.  
+- **Solution**:  
+  1. Optimize assets for performance (e.g., reduce texture resolution).  
+  2. Limit the number of active custom assets.  
+
+---
+
+## Best Practices  
+
+- Use lightweight assets to minimize performance impact.  
+- Document asset locations and references for future updates.  
+- Share custom assets with the community to foster collaboration.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Custom Assets Guide](/advanced-features/custom-assets). 🚀  

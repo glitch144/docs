@@ -1,0 +1,95 @@
+---
+title: "Securing Your Server and Setting Up Backups in Arma Reforger"
+description: "Learn how to secure your Arma Reforger server and set up automated backups to prevent data loss."
+icon: "shield-alt"
+---
+
+# Securing Your Server and Setting Up Backups in Arma Reforger  
+
+Security and backups are critical for protecting your server from attacks and data loss. This guide covers best practices for securing your server and setting up automated backups.
+
+<Callout type="info">  
+This guide assumes you’ve already set up your server. If not, refer to our [Basic Setup Guide](/getting-started/basic-setup).  
+</Callout>  
+
+---
+
+## Overview  
+
+Key security measures include:  
+- Enabling firewalls and DDoS protection.  
+- Setting up two-factor authentication (2FA).  
+- Regularly backing up server files.  
+
+---
+
+## Steps to Secure Your Server  
+
+### Step 1: Enable Firewalls  
+1. Use a firewall to restrict access to your server.  
+2. Allow traffic only on required ports (e.g., `2302 UDP`).  
+
+---
+
+### Step 2: Set Up 2FA  
+Enable 2FA for admin accounts to prevent unauthorized access:  
+```text
+/auth enable-2fa
+```
+
+---
+
+### Step 3: Monitor Logs for Suspicious Activity  
+Regularly check logs for signs of unauthorized access:  
+```bash
+# Example: Analyze logs for login attempts
+grep "login" server.log
+```
+
+---
+
+## Steps to Set Up Backups  
+
+### Step 1: Create a Backup Script  
+Write a script to back up server files:  
+
+```bash
+#!/bin/bash
+tar -czf backup-$(date +%Y-%m-%d).tar.gz /path/to/server/files
+```
+
+---
+
+### Step 2: Schedule Backups  
+Use a task scheduler like **Cron** to run the script daily:  
+```bash
+0 0 * * * /path/to/backup-script.sh
+```
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Backups Fail  
+- **Cause**: Insufficient disk space or missing files.  
+- **Solution**:  
+  1. Free up disk space or increase storage.  
+  2. Ensure all required files are included in the backup.  
+
+### Issue: Unauthorized Access  
+- **Cause**: Weak passwords or disabled firewalls.  
+- **Solution**:  
+  1. Use strong, unique passwords for all accounts.  
+  2. Enable firewalls and restrict access to trusted IPs.  
+
+---
+
+## Best Practices  
+
+- Store backups off-site (e.g., cloud storage).  
+- Regularly test backups to ensure they can be restored.  
+- Keep software and plugins updated to patch vulnerabilities.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Security and Backups Guide](/server-management/security-and-backups). 🚀  
