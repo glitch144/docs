@@ -11,25 +11,138 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Minecraft",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Management",
             "pages": [
-              "introduction",
-              "quickstart",
-              "development"
+              "minecraft/management/custom-commands",
+              "minecraft/management/custom-plugins",
+              "minecraft/management/difficulty",
+              "minecraft/management/icon",
+              "minecraft/management/motd",
+              "minecraft/management/resource-packs",
+              "minecraft/management/world-settings"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Guides",
             "pages": [
-              "essentials/markdown",
+              "minecraft/automating",
+              "minecraft/basic-setup",
+              "minecraft/community-management",
+              "minecraft/installing-mods-plugins",
+              "minecraft/performance-optimization",
+              "minecraft/proxy",
+              "minecraft/security-and-backups",
+              "minecraft/troubleshooting",
+              "minecraft/maps-datapacks",
+              "minecraft/server-promotion"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Arma Reforger",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "arma-reforger/getting-started/basic-setup",
+              "arma-reforger/getting-started/first-mission",
+              "arma-reforger/getting-started/server-hosting"
+            ]
+          },
+          {
+            "group": "Scripting",
+            "pages": [
+              "arma-reforger/scripting/introduction-to-scripting",
+              "arma-reforger/scripting/creating-custom-scripts",
+              "arma-reforger/scripting/persistence-and-save-systems",
+              "arma-reforger/scripting/debugging-scripts"
+            ]
+          },
+          {
+            "group": "Missions",
+            "pages": [
+              "arma-reforger/missions/mission-creation-basics",
+              "arma-reforger/missions/advanced-mission-design",
+              "arma-reforger/missions/multiplayer-missions",
+              "arma-reforger/missions/testing-and-deploying-missions"
+            ]
+          },
+          {
+            "group": "Server Management",
+            "pages": [
+              "arma-reforger/server-management/automating-tasks",
+              "arma-reforger/server-management/performance-optimization",
+              "arma-reforger/server-management/security-and-backups"
+            ]
+          },
+          {
+            "group": "Community",
+            "pages": [
+              "arma-reforger/community/hosting-events",
+              "arma-reforger/community/moderation-tools",
+              "arma-reforger/community/promoting-your-server"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "arma-reforger/troubleshooting/common-issues",
+              "arma-reforger/troubleshooting/log-analysis",
+              "arma-reforger/troubleshooting/mod-conflicts"
+            ]
+          },
+          {
+            "group": "Advanced Features",
+            "pages": [
+              "arma-reforger/advanced-features/cross-platform-play",
+              "arma-reforger/advanced-features/custom-assets",
+              "arma-reforger/advanced-features/persistent-worlds",
+              "arma-reforger/advanced-features/realism-settings"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Game Panel",
+        "groups": [
+          {
+            "group": "Panel Features",
+            "pages": [
+              "game-panel/activity",
+              "game-panel/additional-features",
+              "game-panel/backups",
+              "game-panel/console",
+              "game-panel/databases",
+              "game-panel/files",
+              "game-panel/network",
+              "game-panel/panel",
+              "game-panel/proxy",
+              "game-panel/schedules",
+              "game-panel/security",
+              "game-panel/server-type",
+              "game-panel/settings",
+              "game-panel/startup",
+              "game-panel/users"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Essentials",
+        "groups": [
+          {
+            "group": "Essential Guides",
+            "pages": [
               "essentials/code",
               "essentials/images",
-              "essentials/settings",
+              "essentials/markdown",
               "essentials/navigation",
-              "essentials/reusable-snippets"
+              "essentials/reusable-snippets",
+              "essentials/settings"
             ]
           }
         ]
@@ -46,9 +159,9 @@
           {
             "group": "Endpoint Examples",
             "pages": [
-              "api-reference/endpoint/get",
               "api-reference/endpoint/create",
               "api-reference/endpoint/delete",
+              "api-reference/endpoint/get",
               "api-reference/endpoint/webhook"
             ]
           }
