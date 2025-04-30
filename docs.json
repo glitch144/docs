@@ -9,10 +9,12 @@
   },
   "favicon": "/icon.svg",
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Minecraft",
-        "groups": [
+        "group": "Minecraft",
+        "icon": "cube",
+        "collapsed": true,
+        "pages": [
           {
             "group": "Management",
             "pages": [
@@ -43,8 +45,10 @@
         ]
       },
       {
-        "tab": "Arma Reforger",
-        "groups": [
+        "group": "Arma Reforger",
+        "icon": "tank",
+        "collapsed": true,
+        "pages": [
           {
             "group": "Getting Started",
             "pages": [
@@ -107,8 +111,10 @@
         ]
       },
       {
-        "tab": "Game Panel",
-        "groups": [
+        "group": "Game Panel",
+        "icon": "server",
+        "collapsed": true,
+        "pages": [
           {
             "group": "Panel Features",
             "pages": [
@@ -127,42 +133,6 @@
               "game-panel/settings",
               "game-panel/startup",
               "game-panel/users"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Essentials",
-        "groups": [
-          {
-            "group": "Essential Guides",
-            "pages": [
-              "essentials/code",
-              "essentials/images",
-              "essentials/markdown",
-              "essentials/navigation",
-              "essentials/reusable-snippets",
-              "essentials/settings"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/webhook"
             ]
           }
         ]
