@@ -1,101 +1,160 @@
----
-title: "Server Type Selection"
----
+# Using the Server Type Tab  
 
-<Info>
-  This guide is for Minecraft servers
-</Info>
-
-![X Gaming Server Versions Sv](/images/XGamingServerVersions.svg)
-
-_Choose the right Minecraft server software for your needs_
-
-## **Overview**
-
-This guide helps you navigate XGamingServer's supported Minecraft server types, including **Vanilla**, **Modded**, and **Optimized** variants. Use the filters below to find your ideal setup.
-
-## **Categories**
-
-### **1. Recommended (Most Popular)**
-
-| **Type**     | **Key Features**       | **Ideal For**             |
-| :----------- | :--------------------- | :------------------------ |
-| **Vanilla**  | Official Mojang builds | Pure gameplay, no mods    |
-| **Paper**    | Performance-optimized  | Large servers, anti-lag   |
-| **Fabric**   | Lightweight modding    | Custom clientside mods    |
-| **Forge**    | Heavy mod support      | Modpacks, tech/magic mods |
-| **Velocity** | Proxy network          | Multi-server networks     |
-
-### **2. Established (Proven Stability)**
-
-| **Type**       | **Version Support** | **Notes**                         |
-| :------------- | :------------------ | :-------------------------------- |
-| **Purpur**     | 31 MC versions      | Paper fork with extra features    |
-| **Pufferfish** | 15 MC versions      | Optimized for large player counts |
-| **Spigot**     | 51 MC versions      | Classic plugin support            |
-| **BungeeCord** | 21 MC versions      | Legacy proxy system               |
-
-### **3. Experimental (Cutting-Edge)**
-
-| **Type**   | **Risk Level** | **Use Case**                  |
-| :--------- | :------------- | :---------------------------- |
-| **Folia**  | High           | Multi-threaded chunk handling |
-| **Quilt**  | Medium         | Fabric alternative            |
-| **Canvas** | High           | Rendering engine mods         |
-
-### **4. Miscellaneous (Specialized)**
-
-| **Type**          | **Purpose**                |
-| :---------------- | :------------------------- |
-| **Arclight**      | Bukkit/Forge hybrid        |
-| **Legacy Fabric** | Older mod support          |
-| **Leaves**        | Paper fork with QoL tweaks |
-
-### **5. Limbo (Beta/Unstable)**
-
-_For testing only - not production-ready_
-
-- LooliPl Limbo
-- NanoLimbo
-
-## **Version Support Matrix**
-
-| **Server Type** | **Supported MC Versions** | **Total Builds** |
-| :-------------- | :------------------------ | :--------------- |
-| Vanilla         | 1.0 - 1.20.x (741)        | 741              |
-| Fabric          | 1.14 - 1.20.x (384)       | 26,792           |
-| Paper           | 1.8.x - 1.20.x (44)       | 4,085            |
-
-## **Choosing Your Server Type**
-
-1. **Performance Needs**
-   - Small servers: Vanilla/Spigot
-   - 50\+ players: Paper/Purpur
-   - 100\+ players: Pufferfish/Folia
-2. **Mod Requirements**
-   - Client-side: Fabric/Quilt
-   - Server-side: Forge
-   - Hybrid: Arclight
-3. **Network Setup**
-   - Single server: Paper
-   - Multi-server: Velocity \+ BungeeCord
-
-## **Best Practices**
-
-✅ **Match versions** - Server/client must match exactly\
-✅ **Test updates** - Use cloned servers for major version jumps\
-✅ **Monitor builds**
-
-## **Troubleshooting**
-
-| **Issue**        | **Likely Fix**                   |
-| :--------------- | :------------------------------- |
-| Mods not loading | Verify server type compatibility |
-| Version mismatch | Check build numbers in console   |
-| Plugin conflicts | Test with clean install first    |
+The **Server Type Tab** in your XGamingServer control panel allows you to select and manage different server types for your game servers (e.g., Minecraft). This guide walks you through how to choose the right server type based on your needs and ensures compatibility with mods and plugins.  
 
 ---
 
-<Tip>
-  Need personalized recommendations? [Join our Discord](https://discord.gg/Jx5KjXTsRS) with your server goals\! 🛠️
-</Tip>
+## Overview  
+
+The Server Type Tab provides a curated list of server types (also known as "spigots" or "mod loaders") that are compatible with your game. Each server type is optimized for specific use cases, such as performance, mod support, or multiplayer functionality.  
+
+<Callout type="info">  
+This guide assumes you’re using a Minecraft server. Adjust settings as needed for other games.  
+</Callout>  
+
+---
+
+## Key Features of the Server Type Tab  
+
+### 1. **Recommended Server Types**  
+   - These are the most popular and widely supported server types for Minecraft.  
+   - Examples:  
+     - **Paper**: Lightweight and high-performance server type.  
+     - **Fabric**: Supports advanced mods and plugin development.  
+     - **Velocity**: A proxy server for managing multiple servers.  
+
+### 2. **Established Server Types**  
+   - These are well-tested and stable server types with a long history of use.  
+   - Examples:  
+     - **Forge**: Popular for modded servers.  
+     - **Spigot**: Widely used for vanilla-like servers with performance optimizations.  
+
+### 3. **Experimental Server Types**  
+   - These are newer or less tested server types that may offer experimental features.  
+   - Examples:  
+     - **Folia**: An experimental server type focused on asynchronous processing.  
+     - **Quilt**: A modern mod loader designed for Fabric-compatible mods.  
+
+### 4. **Miscellaneous Server Types**  
+   - These include legacy or specialized server types for niche use cases.  
+   - Examples:  
+     - **Arclight**: A lightweight server type for small-scale servers.  
+     - **Mojang Classic**: For running classic versions of Minecraft.  
+
+---
+
+## Step-by-Step Guide to Choosing a Server Type  
+
+### Step 1: Access the Server Type Tab  
+1. Log in to the [Pterodactyl Panel](https://your-ptero-domain.com).  
+2. Select your server from the server list.  
+3. Navigate to the **Server Type** tab in the server dashboard.  
+
+### Step 2: Evaluate Your Needs  
+Before choosing a server type, consider the following:  
+- **Performance**: Do you need a lightweight server for better performance?  
+- **Mod Support**: Will you be installing mods or plugins?  
+- **Multiplayer Features**: Do you need advanced features like proxying or async processing?  
+
+### Step 3: Browse Server Types  
+1. Scroll through the categories (Recommended, Established, Experimental, Miscellaneous).  
+2. Click on a server type to view its details, including:  
+   - Supported Minecraft versions.  
+   - Number of builds available.  
+   - Compatibility notes.  
+
+### Step 4: Select the Right Server Type  
+1. Choose the server type that best fits your requirements.  
+2. Click **Install** to switch to the selected server type.  
+
+<Callout type="warning">  
+Switching server types may require reinstalling mods or plugins, as some are not compatible across all server types. Always back up your server before making changes.  
+</Callout>  
+
+---
+
+## Common Server Types Explained  
+
+### Recommended Server Types  
+- **Paper**:  
+  - Lightweight and highly optimized for performance.  
+  - Compatible with most mods and plugins.  
+  - Ideal for vanilla-like servers or those requiring minimal overhead.  
+
+- **Fabric**:  
+  - Designed for modding and plugin development.  
+  - Supports advanced mods with complex dependencies.  
+  - Best for heavily modded servers.  
+
+- **Velocity**:  
+  - A proxy server for managing multiple servers.  
+  - Useful for load balancing, authentication, and cross-server communication.  
+
+### Established Server Types  
+- **Forge**:  
+  - Popular for modded servers.  
+  - Supports a wide range of mods but may have higher resource requirements.  
+
+- **Spigot**:  
+  - Optimized for performance and stability.  
+  - Compatible with many plugins and mods.  
+
+### Experimental Server Types  
+- **Folia**:  
+  - Focuses on asynchronous processing for improved performance.  
+  - Still under active development; may have bugs or limitations.  
+
+- **Quilt**:  
+  - Modern mod loader built on top of Fabric.  
+  - Supports advanced mods with better performance than traditional loaders.  
+
+### Miscellaneous Server Types  
+- **Arclight**:  
+  - Lightweight server type for small-scale servers.  
+  - Suitable for testing or low-resource environments.  
+
+- **Mojang Classic**:  
+  - For running classic versions of Minecraft.  
+  - Limited functionality compared to modern server types.  
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Mods Not Working After Switching Server Types  
+- **Cause**: The new server type may not be compatible with your existing mods.  
+- **Solution**:  
+  1. Check the mod’s documentation for supported server types.  
+  2. Reinstall compatible mods after switching.  
+
+### Issue: Performance Degradation After Switching  
+- **Cause**: The new server type may have higher resource requirements.  
+- **Solution**:  
+  1. Monitor server performance using tools like TPS (Ticks Per Second).  
+  2. Upgrade server resources if necessary.  
+
+### Issue: Server Crashes After Switching  
+- **Cause**: Incompatible mods or plugins.  
+- **Solution**:  
+  1. Uninstall incompatible mods/plugins.  
+  2. Restore your server from a backup if necessary.  
+
+---
+
+## Best Practices  
+
+- **Choose Wisely**: Select a server type based on your specific needs (performance, mod support, etc.).  
+- **Test Changes**: Before switching server types on a production server, test them on a staging server first.  
+- **Backup Regularly**: Use the Pterodactyl Panel’s built-in backup tools to protect your server data.  
+
+---
+
+## Additional Resources  
+
+- [Pterodactyl Documentation: Server Types](https://pterodactyl.io)  
+- [Managing Backups](/guides/managing-backups)  
+- [Adding Additional Server Ports](/guides/additional-server-ports)  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Server Type Guide](/guides/server-types). 🚀  
