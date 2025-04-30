@@ -1,0 +1,91 @@
+---
+title: "Common Issues in Arma Reforger and How to Fix Them"
+description: "Learn how to diagnose and resolve frequent issues like crashes, lag, and connection errors in Arma Reforger."
+icon: "exclamation-triangle"
+---
+
+# Common Issues in Arma Reforger and How to Fix Them  
+
+Even the best-managed servers can encounter issues. This guide covers common problems in Arma Reforger and provides step-by-step solutions to resolve them.
+
+<Callout type="info">  
+This guide assumes you’ve already set up your server. If not, refer to our [Basic Setup Guide](/getting-started/basic-setup).  
+</Callout>  
+
+---
+
+## Overview  
+
+Below are some of the most frequent issues players and admins encounter:  
+- Server crashes.  
+- High latency or lag.  
+- Connection errors.  
+- Mod-related conflicts.  
+
+---
+
+## Steps to Resolve Common Issues  
+
+### Issue 1: Server Crashes  
+- **Symptoms**: The server stops unexpectedly.  
+- **Solution**:  
+  1. Check server logs for error messages:  
+     ```bash
+     tail -n 50 server.log | grep "error"
+     ```
+  2. Update mods and plugins to the latest versions.  
+  3. Reduce the number of active entities or scripts to lower resource usage.  
+
+---
+
+### Issue 2: High Latency or Lag  
+- **Symptoms**: Players experience slow response times or stuttering gameplay.  
+- **Solution**:  
+  1. Optimize server performance by adjusting settings:  
+     ```properties
+     view-distance=1500
+     max-players=20
+     ```
+  2. Upgrade your hosting plan to a higher-tier provider.  
+  3. Limit the number of players during peak hours.  
+
+---
+
+### Issue 3: Connection Errors  
+- **Symptoms**: Players cannot connect to the server.  
+- **Solution**:  
+  1. Verify that the required ports (e.g., `2302 UDP`) are open.  
+  2. Ensure the server’s IP address is correct and reachable.  
+  3. Check firewall settings to allow traffic.  
+
+---
+
+### Issue 4: Mod Conflicts  
+- **Symptoms**: Mods fail to load or cause instability.  
+- **Solution**:  
+  1. Disable all mods and re-enable them one by one to identify the culprit.  
+  2. Check mod dependencies and ensure compatibility.  
+  3. Use lightweight alternatives if necessary.  
+
+---
+
+## Troubleshooting Checklist  
+
+| Issue               | Possible Cause                | Solution                                   |
+|---------------------|-------------------------------|-------------------------------------------|
+| Server Crashes      | Outdated mods or high load    | Update mods and reduce entity count       |
+| High Latency        | Insufficient resources        | Optimize settings and upgrade hosting     |
+| Connection Errors   | Firewall or incorrect IP      | Open ports and verify IP address          |
+| Mod Conflicts       | Incompatible or missing files | Test mods individually and check versions |
+
+---
+
+## Best Practices  
+
+- Regularly back up server files before making changes.  
+- Monitor logs for early signs of issues.  
+- Communicate with players to gather feedback on problems.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Troubleshooting Guide](/troubleshooting/common-issues). 🚀  

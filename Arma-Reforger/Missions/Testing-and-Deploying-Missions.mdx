@@ -1,0 +1,83 @@
+---
+title: "Testing and Deploying Missions in Arma Reforger"
+description: "Learn how to test and deploy your missions to ensure they work seamlessly in single-player and multiplayer environments."
+icon: "check-circle"
+---
+
+# Testing and Deploying Missions in Arma Reforger  
+
+Testing and deploying missions is a critical step to ensure they work as intended. This guide will walk you through testing your missions locally and deploying them to a live server.
+
+<Callout type="info">  
+This guide assumes you’ve already created a mission. If not, refer to our [Mission Creation Basics Guide](/missions/mission-creation-basics).  
+</Callout>  
+
+---
+
+## Overview  
+
+Testing involves verifying that all entities, objectives, and scripts function correctly. Deployment ensures the mission is accessible to players on your server.  
+
+---
+
+## Steps to Test Your Mission  
+
+### Step 1: Test Locally  
+1. Load the mission in single-player mode.  
+2. Verify that:  
+   - All entities spawn correctly.  
+   - Objectives trigger as expected.  
+   - Scripts execute without errors.  
+
+---
+
+### Step 2: Test in Multiplayer  
+1. Host a local multiplayer session.  
+2. Invite friends or use bots to simulate player interactions.  
+3. Check for synchronization issues and balance problems.  
+
+---
+
+## Steps to Deploy Your Mission  
+
+### Step 1: Package the Mission  
+1. Save the mission file (e.g., `MyMission.enf`).  
+2. Compress the mission folder into a `.zip` file if required.  
+
+### Step 2: Upload to Server  
+1. Navigate to your server’s `Missions` folder via the **File Manager**.  
+2. Upload the mission file.  
+
+### Step 3: Configure `server.cfg`  
+Reference the mission in your server configuration:  
+```properties
+mission=MyMission
+```
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Mission Not Loading on Server  
+- **Cause**: Incorrect file placement or naming.  
+- **Solution**:  
+  1. Ensure the mission file is in the correct folder.  
+  2. Match the mission name in `server.cfg`.  
+
+### Issue: Bugs in Multiplayer  
+- **Cause**: Missing synchronization or untested scripts.  
+- **Solution**:  
+  1. Test all scripts in multiplayer mode before deployment.  
+  2. Use logs to identify and fix bugs.  
+
+---
+
+## Best Practices  
+
+- Test missions thoroughly before deploying them to production.  
+- Document known issues and solutions for future reference.  
+- Regularly update missions based on player feedback.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Testing and Deployment Guide](/missions/testing-and-deploying-missions). 🚀  

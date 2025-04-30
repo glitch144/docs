@@ -1,0 +1,111 @@
+---
+title: "Basic Setup for Arma Reforger"
+description: "Learn how to install and configure your Arma Reforger server for the first time."
+icon: "server"
+---
+
+# Basic Setup for Arma Reforger  
+
+Setting up your Arma Reforger server is the first step toward hosting missions, managing players, and creating immersive experiences. This guide will walk you through the installation, configuration, and initial testing of your server.
+
+<Callout type="info">  
+This guide assumes you have a basic understanding of servers and game hosting. If not, refer to our [Introduction to Game Servers](/guides/intro-to-game-servers).  
+</Callout>  
+
+---
+
+## Overview  
+
+Arma Reforger requires a dedicated server to host multiplayer sessions. You can set it up locally or use a hosting provider. Below are the steps to get started.
+
+---
+
+## Steps to Set Up Your Server  
+
+### Step 1: Install Arma Reforger  
+1. **Download the Game**:  
+   - Purchase and download Arma Reforger from the [Steam Store](https://store.steampowered.com/app/1874900/Arma_Reforger/).  
+   - Ensure your system meets the minimum requirements:  
+     ```table
+     | Component       | Minimum Requirements          |
+     |-----------------|-------------------------------|
+     | OS              | Windows 10 (64-bit)          |
+     | CPU             | Intel Core i5-4460 or AMD FX-6300 |
+     | RAM             | 8 GB                         |
+     | GPU             | NVIDIA GTX 960 or AMD RX 570 |
+     | Storage         | 20 GB free space            |
+     ```
+
+2. **Install SteamCMD (Optional)**:  
+   - For headless servers, download [SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD) to manage and update your server remotely.  
+
+3. **Verify Installation**:  
+   - Launch Arma Reforger from Steam to ensure it runs correctly.  
+
+---
+
+### Step 2: Configure Server Settings  
+1. **Locate Configuration Files**:  
+   - Navigate to the `Config` folder in your Arma Reforger installation directory.  
+   - Open the `server.cfg` file for editing.  
+
+2. **Edit Key Settings**:  
+   Below are some common settings you can customize:  
+
+   ```properties
+   # Server Name
+   hostname=My Arma Reforger Server
+
+   # Maximum Players
+   maxPlayers=20
+
+   # Password (Optional)
+   password=SecurePassword123
+
+   # Mission Selection
+   mission=DefaultMissionName
+   ```
+
+3. **Save and Exit**:  
+   - Save the changes to `server.cfg`.  
+
+---
+
+### Step 3: Start the Server  
+1. **Run the Server Locally**:  
+   - Use the following command to start the server:  
+     ```bash
+     ./arma-reforger-server.exe -config=Config/server.cfg
+     ```
+   - Ensure the server launches without errors.  
+
+2. **Test Connectivity**:  
+   - Join the server from another device using its IP address.  
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Server Not Starting  
+- **Cause**: Missing dependencies or incorrect configuration.  
+- **Solution**:  
+  1. Verify that all required files are present.  
+  2. Check the `server.cfg` file for syntax errors.  
+
+### Issue: Unable to Connect  
+- **Cause**: Firewall restrictions or incorrect IP.  
+- **Solution**:  
+  1. Open the required ports (default: `2302 UDP`).  
+  2. Ensure the server’s IP is correct and reachable.  
+
+---
+
+## Best Practices  
+
+- Use a hosting provider for better performance and reliability.  
+- Regularly update the server to the latest version.  
+- Test the server locally before deploying it to production.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Basic Setup Guide](/guides/basic-setup). 🚀  

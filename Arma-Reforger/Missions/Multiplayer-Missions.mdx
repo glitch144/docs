@@ -1,0 +1,94 @@
+---
+title: "Creating Multiplayer Missions in Arma Reforger"
+description: "Learn how to design and deploy missions specifically for multiplayer gameplay in Arma Reforger."
+icon: "users"
+---
+
+# Creating Multiplayer Missions in Arma Reforger  
+
+Multiplayer missions allow multiple players to interact in real-time, creating dynamic and engaging experiences. This guide will show you how to design and deploy missions for multiplayer gameplay.
+
+<Callout type="info">  
+This guide assumes you’re familiar with mission creation. If not, refer to our [Mission Creation Basics Guide](/missions/mission-creation-basics).  
+</Callout>  
+
+---
+
+## Overview  
+
+Multiplayer missions require additional considerations, such as player roles, team balancing, and synchronization. Proper planning ensures a smooth experience for all players.  
+
+---
+
+## Steps to Create a Multiplayer Mission  
+
+### Step 1: Define Player Roles  
+Assign roles to players based on their objectives:  
+- **Attackers**: Capture objectives or eliminate enemies.  
+- **Defenders**: Protect objectives or hold positions.  
+
+Example Role Assignment:  
+```table
+| Role       | Objective                 | Equipment          |
+|------------|---------------------------|--------------------|
+| Attacker   | Capture control points    | Rifles, Grenades   |
+| Defender   | Defend control points     | Machine Guns, Armor|
+```
+
+---
+
+### Step 2: Balance Teams  
+Ensure teams are balanced by:  
+- Limiting the number of players per team.  
+- Distributing resources evenly.  
+
+---
+
+### Step 3: Synchronize Events  
+Use Enforce Script to synchronize events across all players:  
+
+```javascript
+// Synchronize mission start
+onMissionStart(() => {
+    broadcastMessage("The mission has started!");
+    spawnEnemies("EnemyBase", 10);
+});
+```
+
+---
+
+### Step 4: Deploy the Mission  
+1. Save the mission file.  
+2. Upload it to your server’s `Missions` folder.  
+3. Reference the mission in `server.cfg`:  
+   ```properties
+   mission=MyMultiplayerMission
+   ```
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Players Out of Sync  
+- **Cause**: Missing synchronization scripts.  
+- **Solution**:  
+  1. Use `broadcast()` functions to ensure all players receive updates.  
+  2. Test synchronization in multiplayer mode.  
+
+### Issue: Imbalanced Gameplay  
+- **Cause**: Unequal resources or objectives.  
+- **Solution**:  
+  1. Adjust equipment and spawn rates for fairness.  
+  2. Gather feedback from players to identify imbalances.  
+
+---
+
+## Best Practices  
+
+- Communicate objectives clearly to players.  
+- Regularly update missions to keep them fresh and engaging.  
+- Monitor server logs for issues during multiplayer sessions.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Multiplayer Missions Guide](/missions/multiplayer-missions). 🚀  

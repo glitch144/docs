@@ -1,0 +1,107 @@
+---
+title: "Creating Persistent Worlds in Arma Reforger"
+description: "Learn how to set up a persistent world where player actions have long-term effects, such as base building or territory control."
+icon: "globe"
+---
+
+# Creating Persistent Worlds in Arma Reforger  
+
+Persistent worlds allow player actions to have lasting impacts, such as constructing bases, capturing territories, or altering the environment. This guide will show you how to implement persistence in your Arma Reforger server.
+
+<Callout type="info">  
+This guide assumes you’re familiar with scripting. If not, refer to our [Scripting Guide](/scripting/introduction-to-scripting).  
+</Callout>  
+
+---
+
+## Overview  
+
+Persistence involves saving and loading data like:  
+- Player progress (e.g., inventory, score).  
+- World states (e.g., destroyed buildings, captured zones).  
+
+---
+
+## Steps to Create a Persistent World  
+
+### Step 1: Save Data  
+Use Enforce Script to save player and world data:  
+```javascript
+// Save player progress
+onPlayerLeave(player => {
+    let playerName = player.getName();
+    let playerData = {
+        health: player.getHealth(),
+        score: player.getScore()
+    };
+    saveData(playerName, playerData);
+    log(`Progress saved for ${playerName}`);
+});
+```
+
+---
+
+### Step 2: Load Data  
+Restore data when players rejoin or missions reload:  
+```javascript
+// Load player progress
+onPlayerJoin(player => {
+    let playerName = player.getName();
+    let playerData = loadData(playerName);
+    if (playerData) {
+        player.setHealth(playerData.health);
+        player.setScore(playerData.score);
+        log(`Progress loaded for ${playerName}`);
+    }
+});
+```
+
+---
+
+### Step 3: Persist World States  
+Save and restore world states like captured zones:  
+```javascript
+// Save captured zones
+onGameSave(() => {
+    let capturedZones = getCapturedZones(); // Assume this function exists
+    saveData("capturedZones", capturedZones);
+    log("World state saved: Captured zones");
+});
+
+// Load captured zones
+onGameLoad(() => {
+    let capturedZones = loadData("capturedZones");
+    if (capturedZones) {
+        restoreCapturedZones(capturedZones); // Assume this function exists
+        log("World state loaded: Captured zones");
+    }
+});
+```
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Data Not Saving  
+- **Cause**: Missing `saveData()` calls or incorrect keys.  
+- **Solution**:  
+  1. Verify that `saveData()` is called with unique keys.  
+  2. Check server logs for errors during saving.  
+
+### Issue: Data Corruption  
+- **Cause**: Improper data formatting or incomplete saves.  
+- **Solution**:  
+  1. Use JSON-compatible formats for saved data.  
+  2. Validate data before saving or loading.  
+
+---
+
+## Best Practices  
+
+- Use descriptive keys for saved data (e.g., `player-stats`, `world-state`).  
+- Regularly back up saved data to prevent loss.  
+- Test persistence systems thoroughly before deploying them to production.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Persistent Worlds Guide](/advanced-features/persistent-worlds). 🚀  

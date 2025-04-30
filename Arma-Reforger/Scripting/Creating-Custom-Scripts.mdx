@@ -1,0 +1,111 @@
+---
+title: "Creating Custom Scripts in Arma Reforger"
+description: "Learn how to write and deploy custom scripts to add unique features to your Arma Reforger missions or server."
+icon: "file-code"
+---
+
+# Creating Custom Scripts in Arma Reforger  
+
+Custom scripts allow you to add unique behaviors, triggers, and interactions to your missions or server. This guide will walk you through writing and deploying custom scripts using Enforce Script.
+
+<Callout type="info">  
+This guide assumes you’ve already set up your server or mission. If not, refer to our [Basic Setup Guide](/getting-started/basic-setup).  
+</Callout>  
+
+---
+
+## Overview  
+
+Custom scripts can be used to:  
+- Automate repetitive tasks.  
+- Create dynamic events (e.g., respawning enemies).  
+- Modify player behavior (e.g., healing, damage).  
+
+---
+
+## Steps to Create a Custom Script  
+
+### Step 1: Define the Purpose  
+Decide what the script should do. For example:  
+- Spawn vehicles at specific locations.  
+- Trigger explosions when players enter an area.  
+
+### Step 2: Write the Script  
+Below is an example of a script that spawns a vehicle when a player enters a trigger zone:  
+
+```javascript
+// Spawn vehicle on trigger
+onTriggerEnter(triggerZone, player => {
+    let vehicleType = "Truck"; // Replace with desired vehicle type
+    let spawnLocation = triggerZone.getLocation();
+    let vehicle = spawnVehicle(vehicleType, spawnLocation);
+    log(`Vehicle ${vehicleType} spawned at ${spawnLocation}`);
+});
+```
+
+### Step 3: Attach the Script  
+1. Save the script file (e.g., `spawn-vehicle.es`).  
+2. Attach it to the mission or server by referencing it in the `server.cfg` or mission configuration:  
+   ```properties
+   scripts=spawn-vehicle.es
+   ```
+
+### Step 4: Test the Script  
+1. Reload the mission or server.  
+2. Enter the trigger zone and verify that the vehicle spawns.  
+
+---
+
+## Advanced Script Examples  
+
+### Example 1: Dynamic Weather Changes  
+```javascript
+// Change weather based on time
+onGameTick(() => {
+    let currentTime = getTimeOfDay();
+    if (currentTime > 18 || currentTime < 6) {
+        setWeather("Rain");
+    } else {
+        setWeather("Clear");
+    }
+});
+```
+
+### Example 2: Persistent Player Data  
+```javascript
+// Save player progress
+onPlayerLeave(player => {
+    let playerName = player.getName();
+    let playerScore = player.getScore();
+    saveData(playerName, { score: playerScore });
+    log(`Saved progress for ${playerName}: Score ${playerScore}`);
+});
+```
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Script Conflicts  
+- **Cause**: Overlapping triggers or duplicate scripts.  
+- **Solution**:  
+  1. Use unique function names to avoid conflicts.  
+  2. Disable unused scripts to reduce overlap.  
+
+### Issue: Performance Impact  
+- **Cause**: Inefficient loops or excessive logging.  
+- **Solution**:  
+  1. Optimize loops and reduce unnecessary calculations.  
+  2. Limit `log()` usage to critical debugging points.  
+
+---
+
+## Best Practices  
+
+- Use comments to explain complex logic.  
+- Test scripts in small environments before scaling up.  
+- Share reusable scripts with the community to foster collaboration.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Scripting Guide](/scripting/creating-custom-scripts). 🚀  

@@ -1,0 +1,94 @@
+---
+title: "Debugging Scripts in Arma Reforger"
+description: "Learn how to identify and fix errors in your Arma Reforger scripts using logs and testing tools."
+icon: "bug"
+---
+
+# Debugging Scripts in Arma Reforger  
+
+Debugging is an essential skill for identifying and resolving issues in your scripts. This guide will teach you how to use logs, testing tools, and best practices to debug your Arma Reforger scripts effectively.
+
+<Callout type="info">  
+This guide assumes you’re familiar with scripting. If not, refer to our [Introduction to Scripting Guide](/scripting/introduction-to-scripting).  
+</Callout>  
+
+---
+
+## Overview  
+
+Common script errors include syntax mistakes, logical flaws, and performance bottlenecks. Debugging tools like logs and testing environments help you isolate and resolve these issues.
+
+---
+
+## Steps to Debug Scripts  
+
+### Step 1: Enable Logging  
+Use the `log()` function to output debug information:  
+
+```javascript
+// Log player health
+onPlayerJoin(player => {
+    let health = player.getHealth();
+    log(`Player ${player.getName()} joined with health: ${health}`);
+});
+```
+
+### Step 2: Analyze Logs  
+1. Check the server logs for error messages or unexpected behavior.  
+2. Look for stack traces or line numbers to pinpoint issues.  
+
+---
+
+## Common Debugging Techniques  
+
+### Technique 1: Isolate the Problem  
+Comment out sections of the script to narrow down the issue:  
+
+```javascript
+// Comment out parts of the script
+/*
+onPlayerJoin(player => {
+    let health = player.getHealth();
+    log(`Health: ${health}`);
+});
+*/
+```
+
+### Technique 2: Use Breakpoints  
+Simulate breakpoints by pausing execution with `sleep()`:  
+
+```javascript
+// Pause execution for debugging
+onPlayerJoin(player => {
+    sleep(5); // Pauses for 5 seconds
+    log(`Player ${player.getName()} joined`);
+});
+```
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Syntax Errors  
+- **Cause**: Missing semicolons, brackets, or invalid keywords.  
+- **Solution**:  
+  1. Double-check the script for typos.  
+  2. Use a code editor with syntax highlighting.  
+
+### Issue: Logical Errors  
+- **Cause**: Incorrect conditions or calculations.  
+- **Solution**:  
+  1. Add `log()` statements to track variable values.  
+  2. Test scripts step-by-step in single-player mode.  
+
+---
+
+## Best Practices  
+
+- Use consistent formatting for readability.  
+- Test scripts in small environments before scaling up.  
+- Document known issues and solutions for future reference.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Debugging Guide](/scripting/debugging-scripts). 🚀  

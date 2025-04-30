@@ -1,0 +1,107 @@
+---
+title: "Using Moderation Tools in Arma Reforger"
+description: "Learn how to use moderation tools to manage players, enforce rules, and maintain a positive environment on your server."
+icon: "gavel"
+---
+
+# Using Moderation Tools in Arma Reforger  
+
+Moderation tools are essential for maintaining a fair and enjoyable environment on your Arma Reforger server. This guide will show you how to use built-in tools and scripts to manage players effectively.
+
+<Callout type="info">  
+This guide assumes you’ve already set up your server. If not, refer to our [Basic Setup Guide](/getting-started/basic-setup).  
+</Callout>  
+
+---
+
+## Overview  
+
+Effective moderation ensures that players follow server rules and behave respectfully. Common moderation tasks include:  
+- Kicking or banning disruptive players.  
+- Managing chat and voice communication.  
+- Enforcing anti-cheat measures.  
+
+---
+
+## Steps to Use Moderation Tools  
+
+### Step 1: Assign Moderator Roles  
+Grant moderator permissions to trusted players:  
+```properties
+# Example: Assign moderator role
+moderator-permissions=kick,ban,chat
+```
+
+---
+
+### Step 2: Manage Players  
+Use commands to handle rule violations:  
+
+1. **Kick a Player**:  
+   ```text
+   /kick PlayerName
+   ```
+
+2. **Ban a Player**:  
+   ```text
+   /ban PlayerName
+   ```
+
+3. **Mute a Player**:  
+   ```text
+   /mute PlayerName
+   ```
+
+---
+
+### Step 3: Monitor Chat  
+Enable chat filters to block inappropriate language:  
+```properties
+# Enable chat filters
+chat-filter=true
+```
+
+---
+
+## Advanced Moderation Techniques  
+
+### Technique 1: Anti-Cheat Measures  
+Install anti-cheat plugins to detect and prevent cheating:  
+```text
+/installPlugin AntiCheatTool
+```
+
+### Technique 2: Log Analysis  
+Regularly review logs for suspicious activity:  
+```bash
+# Example: Analyze logs for banned players
+grep "ban" server.log
+```
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Commands Not Working  
+- **Cause**: Missing permissions or incorrect syntax.  
+- **Solution**:  
+  1. Verify moderator roles and permissions.  
+  2. Check command syntax in the documentation.  
+
+### Issue: Players Evading Bans  
+- **Cause**: Alternate accounts or IP spoofing.  
+- **Solution**:  
+  1. Use IP-based bans to prevent evasion.  
+  2. Monitor logs for recurring offenders.  
+
+---
+
+## Best Practices  
+
+- Communicate server rules clearly to all players.  
+- Act promptly on reports of rule violations.  
+- Document moderation actions for transparency.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Moderation Tools Guide](/community/moderation-tools). 🚀  

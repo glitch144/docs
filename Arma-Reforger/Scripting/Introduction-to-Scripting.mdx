@@ -1,0 +1,84 @@
+---
+title: "Introduction to Scripting in Arma Reforger"
+description: "Learn the basics of scripting in Arma Reforger using Enforce Script, the game's built-in scripting language."
+icon: "code"
+---
+
+# Introduction to Scripting in Arma Reforger  
+
+Scripting is a powerful tool in Arma Reforger that allows you to customize gameplay mechanics, create dynamic events, and enhance player experiences. This guide will introduce you to **Enforce Script**, the scripting language used in Arma Reforger.
+
+<Callout type="info">  
+This guide assumes you have basic knowledge of programming concepts. If not, refer to our [Programming Basics Guide](/guides/programming-basics).  
+</Callout>  
+
+---
+
+## Overview  
+
+Enforce Script is a lightweight scripting language designed for creating custom behaviors and interactions in Arma Reforger. It supports variables, functions, loops, and event triggers, making it versatile for both simple and complex tasks.
+
+---
+
+## Key Features of Enforce Script  
+
+| Feature           | Description                                      | Example Usage                     |
+|-------------------|--------------------------------------------------|-----------------------------------|
+| Variables         | Store and manipulate data.                       | `let health = 100;`               |
+| Functions         | Define reusable blocks of code.                  | `function heal(player) { ... }`   |
+| Event Triggers    | Respond to in-game events like player actions.   | `onPlayerJoin(player => { ... })` |
+| Loops             | Repeat actions or processes.                     | `for (let i = 0; i < 5; i++) { ... }` |
+
+---
+
+## Steps to Get Started with Scripting  
+
+### Step 1: Access the Script Editor  
+1. Open the **Mission Editor** or **Server Configuration**.  
+2. Navigate to the **Scripts** tab.  
+3. Create a new script file (e.g., `custom-script.es`).  
+
+### Step 2: Write Your First Script  
+Below is an example of a simple script that heals players when they join:  
+
+```javascript
+// Heal players on join
+onPlayerJoin(player => {
+    let maxHealth = 100;
+    player.setHealth(maxHealth);
+    log(`Player ${player.getName()} has been healed!`);
+});
+```
+
+### Step 3: Save and Test  
+1. Save the script file.  
+2. Reload the mission or server to apply changes.  
+3. Test the script by joining the server and observing the results.  
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Script Not Running  
+- **Cause**: Syntax errors or missing dependencies.  
+- **Solution**:  
+  1. Check the script for typos or missing semicolons.  
+  2. Ensure the script file is correctly referenced in your mission or server configuration.  
+
+### Issue: Unexpected Behavior  
+- **Cause**: Logical errors in the script.  
+- **Solution**:  
+  1. Use `log()` to debug and track variable values.  
+  2. Test scripts in single-player mode before deploying them to multiplayer.  
+
+---
+
+## Best Practices  
+
+- Use descriptive variable and function names for readability.  
+- Modularize your scripts by breaking them into smaller functions.  
+- Regularly test scripts to ensure compatibility with updates.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Scripting Guide](/scripting/introduction-to-scripting). 🚀  

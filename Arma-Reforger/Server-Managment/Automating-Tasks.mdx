@@ -1,0 +1,98 @@
+---
+title: "Automating Tasks in Arma Reforger"
+description: "Learn how to automate repetitive tasks like restarts, backups, and announcements using scripts or third-party tools."
+icon: "cogs"
+---
+
+# Automating Tasks in Arma Reforger  
+
+Automation simplifies server management by handling repetitive tasks like restarts, backups, and announcements. This guide will show you how to set up automation using Enforce Script or third-party tools.
+
+<Callout type="info">  
+This guide assumes you’ve already set up your server. If not, refer to our [Basic Setup Guide](/getting-started/basic-setup).  
+</Callout>  
+
+---
+
+## Overview  
+
+Automation can be achieved through:  
+- **Enforce Script**: Schedule tasks directly within the game.  
+- **Third-Party Tools**: Use external tools like cron jobs or server management panels.  
+
+---
+
+## Steps to Automate Tasks  
+
+### Step 1: Use Enforce Script for In-Game Automation  
+Below is an example of a script that broadcasts a message every hour:  
+
+```javascript
+// Broadcast hourly messages
+onGameTick(() => {
+    let currentTime = getTimeOfDay();
+    if (currentTime % 1 === 0) { // Every hour
+        broadcastMessage("Welcome to the server! Enjoy your stay.");
+    }
+});
+```
+
+---
+
+### Step 2: Use Cron Jobs for External Automation  
+If you’re using a Linux-based server, you can use `cron` to schedule tasks:  
+
+1. Open the terminal and run:  
+   ```bash
+   crontab -e
+   ```
+
+2. Add a cron job to restart the server daily at midnight:  
+   ```bash
+   0 0 * * * ./arma-reforger-server restart
+   ```
+
+---
+
+### Step 3: Automate Backups  
+Use a script to back up your server files regularly:  
+
+```bash
+#!/bin/bash
+# Backup script
+DATE=$(date +%Y-%m-%d)
+tar -czf /backups/server-backup-$DATE.tar.gz /path/to/server/files
+```
+
+Schedule this script using `cron`:  
+```bash
+0 2 * * * /path/to/backup-script.sh
+```
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Tasks Not Running  
+- **Cause**: Incorrect scheduling or missing permissions.  
+- **Solution**:  
+  1. Verify cron jobs or script paths.  
+  2. Ensure scripts have execute permissions (`chmod +x script.sh`).  
+
+### Issue: Overlapping Tasks  
+- **Cause**: Multiple scripts running simultaneously.  
+- **Solution**:  
+  1. Use unique timestamps or logs to avoid overlaps.  
+  2. Test tasks individually before combining them.  
+
+---
+
+## Best Practices  
+
+- Log all automated tasks for debugging.  
+- Test automation scripts in a staging environment before deploying them to production.  
+- Regularly review and update scheduled tasks to ensure they remain relevant.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Automation Guide](/server-management/automating-tasks). 🚀  

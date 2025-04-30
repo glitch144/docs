@@ -1,0 +1,73 @@
+---
+title: "Enabling Cross-Platform Play in Arma Reforger"
+description: "Learn how to configure your Arma Reforger server to support cross-platform play between PC and console players."
+icon: "mobile-alt"
+---
+
+# Enabling Cross-Platform Play in Arma Reforger  
+
+Cross-platform play allows players on different devices (e.g., PC and consoles) to join the same server. This guide will show you how to configure your server to support cross-platform play effectively.
+
+<Callout type="info">  
+This guide assumes you’ve already set up your server. If not, refer to our [Basic Setup Guide](/getting-started/basic-setup).  
+</Callout>  
+
+---
+
+## Overview  
+
+Cross-platform play enhances accessibility and expands your player base. However, it requires careful configuration to ensure compatibility and fair gameplay.
+
+---
+
+## Steps to Enable Cross-Platform Play  
+
+### Step 1: Update Server Settings  
+Enable cross-platform play in the `server.cfg` file:  
+```properties
+# Enable cross-platform play
+crossplay=true
+```
+
+---
+
+### Step 2: Configure Input Settings  
+Ensure input methods (e.g., keyboard/mouse vs. controller) are balanced:  
+```properties
+# Balance input methods
+input-balancing=true
+```
+
+---
+
+### Step 3: Test Cross-Platform Compatibility  
+1. Invite players on different platforms to join the server.  
+2. Monitor gameplay for issues like lag or unfair advantages.  
+
+---
+
+## Troubleshooting Common Issues  
+
+### Issue: Players Cannot Connect  
+- **Cause**: Firewall restrictions or incorrect settings.  
+- **Solution**:  
+  1. Open required ports for all platforms.  
+  2. Verify that `crossplay=true` is enabled in `server.cfg`.  
+
+### Issue: Unbalanced Gameplay  
+- **Cause**: Differences in input methods or hardware capabilities.  
+- **Solution**:  
+  1. Adjust settings to balance input methods.  
+  2. Gather feedback from players to identify imbalances.  
+
+---
+
+## Best Practices  
+
+- Communicate cross-platform support clearly to players.  
+- Regularly test cross-platform sessions for compatibility.  
+- Address player feedback to improve fairness and accessibility.  
+
+---
+
+Need further assistance? Contact our support team or refer to our [Comprehensive Cross-Platform Play Guide](/advanced-features/cross-platform-play). 🚀  
