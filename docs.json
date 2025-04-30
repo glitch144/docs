@@ -10,38 +10,38 @@
   "favicon": "/icon.svg",
   "navigation": {
     "tabs": [
-      {
-        "tab": "Minecraft",
-        "groups": [
-          {
-            "group": "Management",
-            "pages": [
-              "minecraft/management/custom-commands",
-              "minecraft/management/custom-plugins",
-              "minecraft/management/difficulty",
-              "minecraft/management/icon",
-              "minecraft/management/motd",
-              "minecraft/management/resource-packs",
-              "minecraft/management/world-settings"
-            ]
-          },
-          {
-            "group": "Guides",
-            "pages": [
-              "minecraft/automating",
-              "minecraft/basic-setup",
-              "minecraft/community-management",
-              "minecraft/installing-mods-plugins",
-              "minecraft/performance-optimization",
-              "minecraft/proxy",
-              "minecraft/security-and-backups",
-              "minecraft/troubleshooting",
-              "minecraft/maps-datapacks",
-              "minecraft/server-promotion"
-            ]
-          }
-        ]
-      },
+      // {
+      //   "tab": "Minecraft",
+      //   "groups": [
+      //     {
+      //       "group": "Management",
+      //       "pages": [
+      //         "minecraft/management/custom-commands",
+      //         "minecraft/management/custom-plugins",
+      //         "minecraft/management/difficulty",
+      //         "minecraft/management/icon",
+      //         "minecraft/management/motd",
+      //         "minecraft/management/resource-packs",
+      //         "minecraft/management/world-settings"
+      //       ]
+      //     },
+      //     {
+      //       "group": "Guides",
+      //       "pages": [
+      //         "minecraft/automating",
+      //         "minecraft/basic-setup",
+      //         "minecraft/community-management",
+      //         "minecraft/installing-mods-plugins",
+      //         "minecraft/performance-optimization",
+      //         "minecraft/proxy",
+      //         "minecraft/security-and-backups",
+      //         "minecraft/troubleshooting",
+      //         "minecraft/maps-datapacks",
+      //         "minecraft/server-promotion"
+      //       ]
+      //     }
+      //   ]
+      // },
       {
         "tab": "Arma Reforger",
         "groups": [
