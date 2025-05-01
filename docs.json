@@ -1,13 +1,13 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Docs",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "favicon": "/icon.svg",
+  "favicon": "/favicon.svg",
   "navigation": {
     "groups": [
       {
@@ -16,30 +16,39 @@
         "collapsed": true,
         "pages": [
           {
-            "group": "Management",
+            "group": "Getting Started",
             "pages": [
-              "minecraft/management/custom-commands",
-              "minecraft/management/custom-plugins",
-              "minecraft/management/difficulty",
-              "minecraft/management/icon",
-              "minecraft/management/motd",
-              "minecraft/management/resource-packs",
-              "minecraft/management/world-settings"
+              "Minecraft/Basic-Setup",
+              "Minecraft/Automating"
             ]
           },
           {
-            "group": "Guides",
+            "group": "Management",
             "pages": [
-              "minecraft/automating",
-              "minecraft/basic-setup",
-              "minecraft/community-management",
-              "minecraft/installing-mods-plugins",
-              "minecraft/performance-optimization",
-              "minecraft/proxy",
-              "minecraft/security-and-backups",
-              "minecraft/troubleshooting",
-              "minecraft/maps-datapacks",
-              "minecraft/server-promotion"
+              "Minecraft/Managment/Custom-Commands",
+              "Minecraft/Managment/Custom-Plugins",
+              "Minecraft/Managment/Difficulty",
+              "Minecraft/Managment/Icon",
+              "Minecraft/Managment/Motd",
+              "Minecraft/Managment/Resource-Packs",
+              "Minecraft/Managment/World-Settings"
+            ]
+          },
+          {
+            "group": "Advanced Features",
+            "pages": [
+              "Minecraft/Installing_mods_plugins",
+              "Minecraft/Performance_optimization",
+              "Minecraft/Proxy",
+              "Minecraft/maps-datapacks",
+              "Minecraft/server-promotion"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "Minecraft/Troubleshooting",
+              "Minecraft/Securityandbackups"
             ]
           }
         ]
@@ -52,60 +61,59 @@
           {
             "group": "Getting Started",
             "pages": [
-              "arma-reforger/getting-started/basic-setup",
-              "arma-reforger/getting-started/first-mission",
-              "arma-reforger/getting-started/server-hosting"
+              "Arma-Reforger/Getting-Started/Basic-Setup",
+              "Arma-Reforger/Getting-Started/First-Mission"
             ]
           },
           {
             "group": "Scripting",
             "pages": [
-              "arma-reforger/scripting/introduction-to-scripting",
-              "arma-reforger/scripting/creating-custom-scripts",
-              "arma-reforger/scripting/persistence-and-save-systems",
-              "arma-reforger/scripting/debugging-scripts"
+              "Arma-Reforger/Scripting/Introduction-to-Scripting",
+              "Arma-Reforger/Scripting/Creating-Custom-Scripts",
+              "Arma-Reforger/Scripting/Persistence-and-Save-Systems",
+              "Arma-Reforger/Scripting/Debugging-Scripts"
             ]
           },
           {
             "group": "Missions",
             "pages": [
-              "arma-reforger/missions/mission-creation-basics",
-              "arma-reforger/missions/advanced-mission-design",
-              "arma-reforger/missions/multiplayer-missions",
-              "arma-reforger/missions/testing-and-deploying-missions"
+              "Arma-Reforger/Missions/Mission-Creation-Basics",
+              "Arma-Reforger/Missions/Advanced-Mission-Design",
+              "Arma-Reforger/Missions/Multiplayer-Missions",
+              "Arma-Reforger/Missions/Testing-and-Deploying-Missions"
             ]
           },
           {
             "group": "Server Management",
             "pages": [
-              "arma-reforger/server-management/automating-tasks",
-              "arma-reforger/server-management/performance-optimization",
-              "arma-reforger/server-management/security-and-backups"
+              "Arma-Reforger/Server-Managment/Automating-Tasks",
+              "Arma-Reforger/Server-Managment/Performance-Optimization",
+              "Arma-Reforger/Server-Managment/Security-and-Backups"
             ]
           },
           {
             "group": "Community",
             "pages": [
-              "arma-reforger/community/hosting-events",
-              "arma-reforger/community/moderation-tools",
-              "arma-reforger/community/promoting-your-server"
+              "Arma-Reforger/Community/Moderation-Tools",
+              "Arma-Reforger/Community/Hosting-Events",
+              "Arma-Reforger/Community/Promoting-Your-Server"
             ]
           },
           {
             "group": "Troubleshooting",
             "pages": [
-              "arma-reforger/troubleshooting/common-issues",
-              "arma-reforger/troubleshooting/log-analysis",
-              "arma-reforger/troubleshooting/mod-conflicts"
+              "Arma-Reforger/Troubleshooting/Common-Issues",
+              "Arma-Reforger/Troubleshooting/Log-Analysis",
+              "Arma-Reforger/Troubleshooting/Mod-Conflicts"
             ]
           },
           {
             "group": "Advanced Features",
             "pages": [
-              "arma-reforger/advanced-features/cross-platform-play",
-              "arma-reforger/advanced-features/custom-assets",
-              "arma-reforger/advanced-features/persistent-worlds",
-              "arma-reforger/advanced-features/realism-settings"
+              "Arma-Reforger/Advanced-Features/Cross-Platform-Play",
+              "Arma-Reforger/Advanced-Features/Custom-Assets",
+              "Arma-Reforger/Advanced-Features/Persistent-Worlds",
+              "Arma-Reforger/Advanced-Features/Realism-Settings"
             ]
           }
         ]
@@ -118,68 +126,34 @@
           {
             "group": "Panel Features",
             "pages": [
-              "game-panel/activity",
-              "game-panel/additional-features",
-              "game-panel/backups",
-              "game-panel/console",
-              "game-panel/databases",
-              "game-panel/files",
-              "game-panel/network",
-              "game-panel/panel",
-              "game-panel/proxy",
-              "game-panel/schedules",
-              "game-panel/security",
-              "game-panel/server-type",
-              "game-panel/settings",
-              "game-panel/startup",
-              "game-panel/users"
+              "Game-Panel/Activity",
+              "Game-Panel/Additional-Features",
+              "Game-Panel/Backups",
+              "Game-Panel/Console",
+              "Game-Panel/Databases",
+              "Game-Panel/Files",
+              "Game-Panel/Network",
+              "Game-Panel/Panel",
+              "Game-Panel/Proxy",
+              "Game-Panel/Schedules",
+              "Game-Panel/Securit",
+              "Game-Panel/Server-type",
+              "Game-Panel/Settings",
+              "Game-Panel/Startup",
+              "Game-Panel/Users"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/XGAA.svg",
     "dark": "/logo/Xga.svg"
   },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+  "footerSocials": {
+    "x": "https://x.com/xgamingserver",
+    "github": "https://github.com/xgamingserver",
+    "discord": "https://discord.gg/xgamingserver"
   }
 }
